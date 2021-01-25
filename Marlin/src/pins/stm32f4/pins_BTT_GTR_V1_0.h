@@ -94,6 +94,9 @@
     #define Z_MIN_PIN                E2_DIAG_PIN  // Z+
   #endif
 #else
+  //#ifndef Z_MIN_PIN
+  //  #define Z_MIN_PIN                           PE0//PH11//PE0
+  //#endif
   #define Z_MIN_PIN                   Z_DIAG_PIN  // Z-
   #define Z_MAX_PIN                  E2_DIAG_PIN  // Z+
 #endif
@@ -101,11 +104,13 @@
 //
 // Pins on the extender
 //
-//#define X_MIN_PIN                         PI4
-//#define X2_MIN_PIN                        PF12
-//#define Y_MIN_PIN                         PF4
-//#define Y2_MIN_PIN                        PI7
-//#define Z_MIN_PIN                         PF6
+//fdk: todo: vragen aan BTT of de oorspronkelijke namen fout zijn:
+//#define M1_MIN_PIN                        PI4    //X_MIN_PIN
+//#define M2_MIN_PIN                        PF4    //Y_MIN_PIN
+//#define M3_MIN_PIN                        PF6    //Z_MIN_PIN
+//#define M4_MIN_PIN                        PI7    //Y2_MIN_PIN
+//#define M5_MIN_PIN                        PF12   //X2_MIN_PIN
+//fdk: todo: tot hier
 
 #if ENABLED(TP) && !defined(Z_MIN_PROBE_PIN)
   #define Z_MIN_PROBE_PIN                   PH11  // Z Probe must be PH11
@@ -319,8 +324,8 @@
 #define FAN3_PIN                            PI5   // Fan3
 #define FAN4_PIN                            PE9   // Fan4
 #define FAN5_PIN                            PE11  // Fan5
-//#define FAN6_PIN                          PC9   // Fan6
-//#define FAN7_PIN                          PE14  // Fan7
+#define FAN6_PIN                            PC9   // Fan6
+#define FAN7_PIN                            PE14  // Fan7
 
 #ifndef SDCARD_CONNECTION
   #define SDCARD_CONNECTION ONBOARD
