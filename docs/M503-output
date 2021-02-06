@@ -1,0 +1,53 @@
+echo:  G21    ; Units in mm (mm)
+echo:  M149 C ; Units in Celsius
+echo:; Filament settings: Disabled
+echo:  M200 S0 D1.75
+echo:; Steps per unit:
+echo: M92 X1280.00 Y1280.00 Z6240.00 E6640.00
+echo:; Maximum feedrates (units/s):
+echo:  M203 X300.00 Y300.00 Z5.00 E25.00
+echo:; Maximum Acceleration (units/s2):
+echo:  M201 X3000.00 Y3000.00 Z100.00 E10000.00
+echo:; Acceleration (units/s2): P<print_accel> R<retract_accel> T<travel_accel>
+echo:  M204 P3000.00 R3000.00 T3000.00
+echo:; Advanced: B<min_segment_time_us> S<min_feedrate> T<min_travel_feedrate> J<junc_dev>
+echo:  M205 B20000.00 S0.00 T0.00 J0.01
+echo:; Home offset:
+echo:  M206 X0.00 Y0.00 Z0.00
+echo:; Auto Bed Leveling:
+echo:  M420 S1 Z0.00
+echo:  G29 W I0 J0 Z0.52721
+echo:  G29 W I1 J0 Z0.08442
+echo:  G29 W I2 J0 Z-0.01445
+echo:  G29 W I3 J0 Z-0.44122
+echo:  G29 W I0 J1 Z0.46215
+echo:  G29 W I1 J1 Z0.28571
+echo:  G29 W I2 J1 Z-0.06798
+echo:  G29 W I3 J1 Z-0.57792
+echo:  G29 W I0 J2 Z0.63843
+echo:  G29 W I1 J2 Z0.34179
+echo:  G29 W I2 J2 Z0.00253
+echo:  G29 W I3 J2 Z-0.35003
+echo:  G29 W I0 J3 Z0.55910
+echo:  G29 W I1 J3 Z0.17705
+echo:  G29 W I2 J3 Z-0.05420
+echo:  G29 W I3 J3 Z-0.16333
+echo:; Material heatup parameters:
+echo:  M145 S0 H180 B50 F0
+echo:  M145 S1 H240 B90 F0
+echo:; PID settings:
+echo:  M301 P22.20 I1.08 D114.00
+echo:; Z-Probe Offset (mm):
+echo:  M851 X-40.00 Y-13.00 Z-4.18
+echo:; Stepper driver current:
+echo:  M906 X500 Y500 Z500
+echo:  M906 T0 E500
+echo:; StallGuard threshold:
+echo:  M914 X8 Y8
+echo:; Driver stepping mode:
+echo:  M569 S1 X Y Z
+echo:  M569 S1 T0 E
+echo:; Filament load/unload lengths:
+echo:  M603 L0.00 U100.00
+echo:; Filament runout sensor:
+echo:  M412 S1
