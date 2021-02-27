@@ -141,7 +141,7 @@
 
 // This defines the number of extruders
 // :[0, 1, 2, 3, 4, 5, 6, 7, 8]
-#define EXTRUDERS 1
+#define EXTRUDERS 4
 
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
@@ -313,9 +313,9 @@
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
 // For the other hotends it is their distance from the extruder 0 hotend.
-//#define HOTEND_OFFSET_X { 0.0, 20.00 } // (mm) relative X-offset for each nozzle
-//#define HOTEND_OFFSET_Y { 0.0, 5.00 }  // (mm) relative Y-offset for each nozzle
-//#define HOTEND_OFFSET_Z { 0.0, 0.00 }  // (mm) relative Z-offset for each nozzle
+#define HOTEND_OFFSET_X { 0.0, 45.00 }  // (mm) relative X-offset for each nozzle
+#define HOTEND_OFFSET_Y { 0.0,  0.00 }  // (mm) relative Y-offset for each nozzle
+#define HOTEND_OFFSET_Z { 0.0,  0.00 }  // (mm) relative Z-offset for each nozzle
 
 // @section machine
 
@@ -416,13 +416,13 @@
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
 #define TEMP_SENSOR_0 1
-#define TEMP_SENSOR_1 0
-#define TEMP_SENSOR_2 0
-#define TEMP_SENSOR_3 0
-#define TEMP_SENSOR_4 0
-#define TEMP_SENSOR_5 0
-#define TEMP_SENSOR_6 0
-#define TEMP_SENSOR_7 0
+#define TEMP_SENSOR_1 1
+#define TEMP_SENSOR_2 998
+#define TEMP_SENSOR_3 998
+#define TEMP_SENSOR_4 998
+#define TEMP_SENSOR_5 998
+#define TEMP_SENSOR_6 998
+#define TEMP_SENSOR_7 998
 #define TEMP_SENSOR_BED 1
 #define TEMP_SENSOR_PROBE 0
 #define TEMP_SENSOR_CHAMBER 1000
@@ -689,11 +689,11 @@
 #define E0_DRIVER_TYPE TMC5160
 #define E1_DRIVER_TYPE TMC5160
 #define E2_DRIVER_TYPE TMC5160
-//#define E3_DRIVER_TYPE TMC5160
-//#define E4_DRIVER_TYPE TMC5160
-//#define E5_DRIVER_TYPE TMC5160
-//#define E6_DRIVER_TYPE TMC5160
-//#define E7_DRIVER_TYPE TMC5160
+#define E3_DRIVER_TYPE TMC5160
+#define E4_DRIVER_TYPE TMC5160
+#define E5_DRIVER_TYPE TMC5160
+#define E6_DRIVER_TYPE TMC5160
+#define E7_DRIVER_TYPE TMC5160
 
 //fdk: todo: nakijken of dit werkt voor mijn masien:
 // Enable this feature if all enabled endstop pins are interrupt-capable.
@@ -1153,7 +1153,7 @@
 
 // The size of the print bed
 #define X_BED_SIZE 330
-#define Y_BED_SIZE 330
+#define Y_BED_SIZE 285 //330 - 45 door 2de hotend
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1200,13 +1200,13 @@
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  */
 #define FIL_RUNOUT_PIN           PG14  //X_MAX_PIN //PG14
-//#define FIL_RUNOUT2_PIN           PG9  //Y_MAX_PIN //PG9
-//#define FIL_RUNOUT3_PIN           PD3  //Z_MAX_PIN //PD3
-//#define FIL_RUNOUT4_PIN           PI4  //X_MAX_PIN //PI4
+#define FIL_RUNOUT2_PIN           PG9  //Y_MAX_PIN //PG9
+#define FIL_RUNOUT3_PIN           PD3  //Z_MAX_PIN //PD3
+#define FIL_RUNOUT4_PIN           PI4  //X_MAX_PIN //PI4
 #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
-  #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
+  #define NUM_RUNOUT_SENSORS   4          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
   #define FIL_RUNOUT_STATE     HIGH       // Pin state indicating that filament is NOT present.
   //#define FIL_RUNOUT_PULLUP               // Use internal pullup for filament runout pins.
   //#define FIL_RUNOUT_PULLDOWN           // Use internal pulldown for filament runout pins.
