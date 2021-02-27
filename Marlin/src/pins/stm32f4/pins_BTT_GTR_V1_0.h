@@ -235,9 +235,9 @@
 //
 #define TEMP_0_PIN                          PC1   // T1 <-> E0
 #define TEMP_1_PIN                          PC2   // T2 <-> E1
-#define TEMP_2_PIN                          PC3   // T3 <-> E2
+#define TEMP_2_PIN                          PC2   // T3 <-> E2 //PC3
 
-#define TEMP_3_PIN                          PA3   // T4 <-> E3
+#define TEMP_3_PIN                          PC2   // T4 <-> E3 //PA3
 #define TEMP_4_PIN                          PF9   // T5 <-> E4
 #define TEMP_5_PIN                          PF10  // T6 <-> E5
 #define TEMP_6_PIN                          PF7   // T7 <-> E6
