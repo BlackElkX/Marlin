@@ -146,6 +146,7 @@
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
 
+//fdk - todo: mixing extruders
 // For Cyclops or any "multi-extruder" that shares a single nozzle.
 //#define SINGLENOZZLE
 
@@ -299,23 +300,24 @@
  *   - This implementation supports up to two mixing extruders.
  *   - Enable DIRECT_MIXING_IN_G1 for M165 and mixing in G1 (from Pia Taubert's reference implementation).
  */
+//fdk - todo: mixing extruders
 //#define MIXING_EXTRUDER
 #if ENABLED(MIXING_EXTRUDER)
-  #define MIXING_STEPPERS 2        // Number of steppers in your mixing extruder
+  #define MIXING_STEPPERS 3        // Number of steppers in your mixing extruder
   #define MIXING_VIRTUAL_TOOLS 16  // Use the Virtual Tool method with M163 and M164
-  //#define DIRECT_MIXING_IN_G1    // Allow ABCDHI mix factors in G1 movement commands
-  //#define GRADIENT_MIX           // Support for gradient mixing with M166 and LCD
+  #define DIRECT_MIXING_IN_G1      // Allow ABCDHI mix factors in G1 movement commands
+  #define GRADIENT_MIX            // Support for gradient mixing with M166 and LCD
   #if ENABLED(GRADIENT_MIX)
-    //#define GRADIENT_VTOOL       // Add M166 T to use a V-tool index as a Gradient alias
+    #define GRADIENT_VTOOL       // Add M166 T to use a V-tool index as a Gradient alias
   #endif
 #endif
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
 // For the other hotends it is their distance from the extruder 0 hotend.
-#define HOTEND_OFFSET_X { 0.0, 45.00 }  // (mm) relative X-offset for each nozzle
-#define HOTEND_OFFSET_Y { 0.0,  0.00 }  // (mm) relative Y-offset for each nozzle
-#define HOTEND_OFFSET_Z { 0.0,  0.00 }  // (mm) relative Z-offset for each nozzle
+#define HOTEND_OFFSET_X { 0.0, -4.39, -4.39, -4.39 }  // (mm) relative X-offset for each nozzle
+#define HOTEND_OFFSET_Y { 0.0, 70.15, 70.15, 70.15 }  // (mm) relative Y-offset for each nozzle
+#define HOTEND_OFFSET_Z { 0.0,  0.00,  0.00,  0.00 }  // (mm) relative Z-offset for each nozzle
 
 // @section machine
 
@@ -735,7 +737,7 @@
  * following movement settings. If fewer factors are given than the
  * total number of extruders, the last value applies to the rest.
  */
-//#define DISTINCT_E_FACTORS
+#define DISTINCT_E_FACTORS
 
 /**
  * Default Axis Steps Per Unit (steps/mm)
@@ -757,14 +759,14 @@
  * 1/256 => 1280.00  4560.00                  6240.00     6640.00
  *                                         X,    Y,    Z,  E0 [, E1[, E2...]]
  */ //fdk: todo: verhoog resolutie Z en E
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, 6640 } //, 6640, 6640
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, 6640, 6640, 6640, 6640 } //
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25, 25, 25, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
