@@ -745,21 +745,22 @@
  * Tronxy x5sa with TMC5160
  * A -> 1.8 degree - 2mm belt - 20 pulley tooths 256 steps
  * B -> 1.8 degree - 2mm belt - 10 pulley tooths 256 steps
- * Z -> 1.8 degree - T8 screw                     32 steps
- * E -> 1.8 degree - titan extruder               32 steps
+ * Z -> 1.8 degree - T8 screw                    256 steps
+ * E -> 1.8 degree - titan extruder              256 steps
  *                A        B                        Z           E
- * 1/1   =>    5.00    10.00                    24.375      25.9375
- * 1/2   =>   10.00    20.00                    48.75       51.875
- * 1/4   =>   20.00    40.00                    97.50      103.75
- * 1/8   =>   40.00    80.00                   195.00      207.50
- * 1/16  =>   80.00   160.00  => A = default   390.00      415.00
- * 1/32  =>  160.00   320.00                   780.00      830.00
- * 1/64  =>  320.00   640.00                  1560.00     1660.00
- * 1/128 =>  640.00  1280.00                  3120.00     3320.00
- * 1/256 => 1280.00  4560.00                  6240.00     6640.00
+ * 1/1   =>    5.00    10.00                    24.375      25.00
+ * 1/2   =>   10.00    20.00                    48.75       50.00
+ * 1/4   =>   20.00    40.00                    97.50      100.00
+ * 1/8   =>   40.00    80.00                   195.00      200.00
+ * 1/16  =>   80.00   160.00  => A = default   390.00      400.00
+ * 1/32  =>  160.00   320.00                   780.00      800.00
+ * 1/64  =>  320.00   640.00                  1560.00     1600.00
+ * 1/128 =>  640.00  1280.00                  3120.00     3200.00
+ * 1/256 => 1280.00  4560.00                  6240.00     6400.00
  *                                         X,    Y,    Z,  E0 [, E1[, E2...]]
  */ //fdk: todo: verhoog resolutie Z en E
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, 6640, 6640, 6640, 6640 } //
+#define TronxyTitanExtruder 6400
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, TronxyTitanExtruder, TronxyTitanExtruder, TronxyTitanExtruder, TronxyTitanExtruder }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -770,7 +771,7 @@
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50 } // ...or, set your own edit limits
+  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50, 50, 50, 50 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -1155,7 +1156,7 @@
 
 // The size of the print bed
 #define X_BED_SIZE 330
-#define Y_BED_SIZE 285 //330 - 45 door 2de hotend
+#define Y_BED_SIZE 285 //330 - 45 because the use of a 2nd hotend
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1163,7 +1164,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 400
+#define Z_MAX_POS 380 //400 - 20 when using timebelt to keep both Z-axis in line.
 
 /**
  * Software Endstops
