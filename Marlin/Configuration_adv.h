@@ -108,9 +108,9 @@
 #endif
 
 #if TEMP_SENSOR_CHAMBER == 1000
-  #define CHAMBER_PULLUP_RESISTOR_OHMS 4700    // Pullup resistor
-  #define CHAMBER_RESISTANCE_25C_OHMS  100000  // Resistance at 25C
-  #define CHAMBER_BETA                 3950    // Beta value
+  #define CHAMBER_PULLUP_RESISTOR_OHMS  4700    // Pullup resistor
+  #define CHAMBER_RESISTANCE_25C_OHMS  50000    // Resistance at 25C
+  #define CHAMBER_BETA                  3950    // Beta value
 #endif
 
 //
@@ -138,11 +138,12 @@
 // Heated Chamber options
 //
 #if TEMP_SENSOR_CHAMBER
+  #define TEMP_CHAMBER_PIN            TEMP_6_PIN
   #define CHAMBER_MINTEMP             5
   #define CHAMBER_MAXTEMP            60
   #define TEMP_CHAMBER_HYSTERESIS     1   // (°C) Temperature proximity considered "close enough" to the target
   //#define CHAMBER_LIMIT_SWITCHING
-  //#define HEATER_CHAMBER_PIN       44   // Chamber heater on/off pin
+  //#define HEATER_CHAMBER_PIN       HEATER_6_PIN//44   // Chamber heater on/off pin
   //#define HEATER_CHAMBER_INVERTING false
 
   #define CHAMBER_FAN               // Enable a fan on the chamber
