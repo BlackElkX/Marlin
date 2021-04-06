@@ -1,0 +1,128 @@
+PIN: PA0  (A0)   M42 P35          <unused/unknown>                       Output = 0
+PIN: PA1  (A1)   M42 P36          HEATER_1_PIN                           protected
+PIN: PA2  (A2)   M42 P37          HEATER_BED_PIN                         protected
+PIN: PA3  (A3)   M42 P38          <unused/unknown>                       Input  = 1
+PIN: PA4  (A4)   M42 P39          SDSS                                   Alt Function: 5  - SPI1/SPI2                                 SS_PIN                                 Alt Function: 5  - SPI1/SPI2
+PIN: PA5  (A5)   M42 P40          DOGLCD_SCK                             Alt Function: 5  - SPI1/SPI2                                 SCK_PIN                                Alt Function: 5  - SPI1/SPI2
+PIN: PA6  (A6)   M42 P41          MISO_PIN                               Alt Function: 5  - SPI1/SPI2
+PIN: PA7  (A7)   M42 P42          DOGLCD_MOSI                            Alt Function: 5  - SPI1/SPI2                                 MOSI_PIN                               Alt Function: 5  - SPI1/SPI2
+PIN: PA8         M42 P16          LCD_PINS_RS                            Output = 0
+PIN: PA9         M42 P17          <unused/unknown>                       Input  = 1
+PIN: PA10        M42 P18          <unused/unknown>                       Input  = 1
+PIN: PA11        M42 P19          <unused/unknown>                       Alt Function: 10 - OTG
+PIN: PA12        M42 P20          <unused/unknown>                       Alt Function: 10 - OTG
+PIN: PA13        M42 P21          <unused/unknown>                       Alt Function: 0  - system (misc. I/O)
+PIN: PA14        M42 P22          <unused/unknown>                       Alt Function: 0  - system (misc. I/O)
+PIN: PA15        M42 P23          BTN_ENC                                Input  = 1
+PIN: PB0  (A8)   M42 P43          HEATER_2_PIN                           protected
+PIN: PB1  (A9)   M42 P44          HEATER_0_PIN                           protected
+PIN: PB2         M42 P5           <unused/unknown>                       Input  = 0
+PIN: PB3         M42 P28          TMC_SW_SCK                             Output = 1
+PIN: PB4         M42 P29          <unused/unknown>                       Alt Function: 0  - system (misc. I/O)
+PIN: PB5         M42 P30          Z_CS_PIN                               protected
+PIN: PB6         M42 P31          TMC_SW_MISO                            Input  = 1
+PIN: PB7         M42 P32          Z_DIR_PIN                              protected
+PIN: PB8         M42 P33          Z_STEP_PIN                             protected
+PIN: PB9         M42 P34          Z_ENABLE_PIN                           protected
+PIN: PB10        M42 P6           <unused/unknown>                       Input  = 1
+PIN: PB11        M42 P7           SERVO0_PIN                             Output = 0
+PIN: PB12        M42 P8           <unused/unknown>                       Input  = 1
+PIN: PB13        M42 P9           <unused/unknown>                       Input  = 1
+PIN: PB14        M42 P10          <unused/unknown>                       Input  = 1
+PIN: PB15        M42 P11          <unused/unknown>                       Input  = 0
+PIN: PC0  (A10)  M42 P45          <unused/unknown>   Analog in =     0   Input  = 0
+PIN: PC1  (A11)  M42 P46          <unused/unknown>   Analog in =     0   Input  = 0
+PIN: PC2  (A12)  M42 P47          <unused/unknown>   Analog in =     0   Input  = 0
+PIN: PC3  (A13)  M42 P48          <unused/unknown>                       Input  = 1
+PIN: PC4  (A14)  M42 P49          <unused/unknown>                       Input  = 0
+PIN: PC5  (A15)  M42 P50          <unused/unknown>                       Input  = 1
+PIN: PC6         M42 P12          <unused/unknown>                       Input  = 1
+PIN: PC7         M42 P13          <unused/unknown>                       Input  = 1
+PIN: PC8         M42 P14          E0_AUTO_FAN_PIN                        protected                                                    FAN2_PIN                               protected
+PIN: PC9         M42 P15          FAN6_PIN                               protected
+PIN: PC10        M42 P24          LCD_PINS_ENABLE                        Output = 0
+PIN: PC11        M42 P25          BEEPER_PIN                             Output = 0
+PIN: PC12        M42 P26          E2_CS_PIN                              protected
+PIN: PC13        M42 P0           Y_MIN_PIN                              protected                                                    Y_STOP_PIN                             protected
+PIN: PC14        M42 P1           X_CS_PIN                               protected
+PIN: PC15        M42 P2           X_STEP_PIN                             protected
+PIN: PD0         M42 P81          E2_DIR_PIN                             protected
+PIN: PD1         M42 P82          E2_STEP_PIN                            protected
+PIN: PD2         M42 P27          E2_ENABLE_PIN                          protected
+PIN: PD3         M42 P83          FIL_RUNOUT3_PIN                        Input  = 0
+PIN: PD4         M42 P84          E1_CS_PIN                              protected
+PIN: PD5         M42 P85          E1_DIR_PIN                             protected
+PIN: PD6         M42 P86          E1_STEP_PIN                            protected
+PIN: PD7         M42 P87          E1_ENABLE_PIN                          protected
+PIN: PD8         M42 P73          <unused/unknown>                       Alt Function: 7  - USART1..3
+PIN: PD9         M42 P74          <unused/unknown>                       Alt Function: 7  - USART1..3
+PIN: PD10        M42 P75          BTN_EN1                                Input  = 1
+PIN: PD11        M42 P76          E4_DIR_PIN                             Output = 0
+PIN: PD12        M42 P77          HEATER_5_PIN                           Output = 0
+PIN: PD13        M42 P78          HEATER_4_PIN                           Output = 0
+PIN: PD14        M42 P79          E4_STEP_PIN                            Input  = 1
+PIN: PD15        M42 P80          HEATER_3_PIN                           protected
+PIN: PE0         M42 P88          <unused/unknown>                       Input  = 1
+PIN: PE1         M42 P89          Y_CS_PIN                               protected
+PIN: PE2         M42 P59          Y_DIR_PIN                              protected
+PIN: PE3         M42 P60          Y_STEP_PIN                             protected
+PIN: PE4         M42 P61          Y_ENABLE_PIN                           protected
+PIN: PE5         M42 P62          FAN_PIN                                protected
+PIN: PE6         M42 P63          FAN1_PIN                               protected
+PIN: PE7         M42 P64          E5_CS_PIN                              Input  = 1
+PIN: PE8         M42 P65          E6_ENABLE_PIN                          Input  = 1
+PIN: PE9         M42 P66          FAN4_PIN                               protected
+PIN: PE10        M42 P67          E5_DIR_PIN                             Input  = 0
+PIN: PE11        M42 P68          FAN5_PIN                               protected
+PIN: PE12        M42 P69          E5_STEP_PIN                            Input  = 1
+PIN: PE13        M42 P70          HEATER_6_PIN                           protected                                                    HEATER_CHAMBER_PIN                     protected
+PIN: PE14        M42 P71          CONTROLLER_FAN_PIN                     protected                                                    FAN7_PIN                               protected
+PIN: PE15        M42 P72          E4_CS_PIN                              Input  = 1
+PIN: PF0         M42 P90          X_DIR_PIN                              protected
+PIN: PF1         M42 P91          X_ENABLE_PIN                           protected
+PIN: PF2         M42 P92          X_MIN_PIN                              protected                                                    X_STOP_PIN                             protected
+PIN: PF3  (A16)  M42 P51          E3_STEP_PIN                            protected
+PIN: PF4  (A17)  M42 P52          <unused/unknown>                       Input  = 1
+PIN: PF5  (A18)  M42 P53          <unused/unknown>                       Input  = 1
+PIN: PF6  (A19)  M42 P54          <unused/unknown>                       Input  = 1
+PIN: PF7  (A20)  M42 P55          <unused/unknown>                       Input  = 0
+PIN: PF8  (A21)  M42 P56          E3_ENABLE_PIN                          protected
+PIN: PF9  (A22)  M42 P57          <unused/unknown>                       Input  = 1
+PIN: PF10 (A23)  M42 P58          <unused/unknown>                       Input  = 1
+PIN: PF11        M42 P93          <unused/unknown>                       Input  = 1
+PIN: PF12        M42 P94          <unused/unknown>                       Input  = 1
+PIN: PF13        M42 P95          <unused/unknown>                       Input  = 1
+PIN: PF14        M42 P96          E5_ENABLE_PIN                          Input  = 0
+PIN: PF15        M42 P97          E6_CS_PIN                              Input  = 1
+PIN: PG0         M42 P98          E6_STEP_PIN                            Input  = 1
+PIN: PG1         M42 P99          E6_DIR_PIN                             Input  = 0
+PIN: PG2         M42 P100         E4_ENABLE_PIN                          Input  = 1
+PIN: PG3         M42 P101         E3_DIR_PIN                             protected
+PIN: PG4         M42 P102         E3_CS_PIN                              protected
+PIN: PG5         M42 P103         LCD_PINS_D7                            Input  = 1
+PIN: PG6         M42 P104         LCD_PINS_D6                            Input  = 0
+PIN: PG7         M42 P105         LCD_PINS_D5                            Input  = 1
+PIN: PG8         M42 P106         LCD_PINS_D4                            Input  = 1
+PIN: PG9         M42 P107         FIL_RUNOUT2_PIN                        Input  = 0
+PIN: PG10        M42 P108         E0_CS_PIN                              protected
+PIN: PG11        M42 P109         E0_DIR_PIN                             protected
+PIN: PG12        M42 P110         E0_STEP_PIN                            protected
+PIN: PG13        M42 P111         E0_ENABLE_PIN                          protected
+PIN: PG14        M42 P112         FIL_RUNOUT_PIN                         Input  = 0
+PIN: PG15        M42 P113         TMC_SW_MOSI                            Input  = 0
+PIN: PH0         M42 P3           <unused/unknown>                       Input  = 0
+PIN: PH1         M42 P4           <unused/unknown>                       Input  = 0
+PIN: PH2         M42 P118         MAX6675_SS2_PIN                        Input  = 1                                                   THERMO_CS2_PIN                         Input  = 1
+PIN: PH3         M42 P119         <unused/unknown>                       Input  = 1
+PIN: PH4         M42 P120         <unused/unknown>                       Input  = 1
+PIN: PH5         M42 P121         <unused/unknown>                       Input  = 1
+PIN: PH6         M42 P122         <unused/unknown>                       Input  = 1
+PIN: PH7         M42 P123         <unused/unknown>                       Input  = 1
+PIN: PH8         M42 P124         <unused/unknown>                       Input  = 0
+PIN: PH9         M42 P125         MAX6675_SS_PIN                         Input  = 1                                                   THERMO_CS1_PIN                         Input  = 1
+PIN: PH10        M42 P126         BTN_EN2                                Input  = 1
+PIN: PH11        M42 P127         Z_MIN_PIN                              protected                                                    Z_STOP_PIN                             protected
+PIN: PH12        M42 P128         E7_STEP_PIN                            Input  = 1
+PIN: PH13        M42 P129         <unused/unknown>                       Input   
+PIN: PH14        M42 P130         E7_CS_PIN                              Input  = 1
+PIN: PH15        M42 P131         E7_DIR_PIN
