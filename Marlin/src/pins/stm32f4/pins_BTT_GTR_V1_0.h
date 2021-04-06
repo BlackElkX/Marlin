@@ -257,7 +257,7 @@
 #define MAX6675_SS_PIN            THERMO_CS1_PIN
 #define MAX6675_SS2_PIN           THERMO_CS2_PIN
 #define MAX6675_SCK_PIN           THERMO_SCK_PIN
-#define MAX6675_DO_PIN             THERMO_DO_PIN
+#define MAX6675_DO_PIN            THERMO_DO_PIN
 
 //
 // Heaters / Fans
