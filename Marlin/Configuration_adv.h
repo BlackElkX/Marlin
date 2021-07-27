@@ -108,9 +108,9 @@
 #endif
 
 #if TEMP_SENSOR_CHAMBER == 1000
-  #define CHAMBER_PULLUP_RESISTOR_OHMS  4700    // Pullup resistor
-  #define CHAMBER_RESISTANCE_25C_OHMS  15000    // Resistance at 25C
-  #define CHAMBER_BETA                  3950    // Beta value
+  #define CHAMBER_PULLUP_RESISTOR_OHMS   4700    // Pullup resistor
+  #define CHAMBER_RESISTANCE_25C_OHMS   10000    // Resistance at 25C
+  #define CHAMBER_BETA                   3950    // Beta value
 #endif
 
 //
@@ -138,12 +138,12 @@
 // Heated Chamber options
 //
 #if TEMP_SENSOR_CHAMBER
-  #define TEMP_CHAMBER_PIN            TEMP_6_PIN
+  #define TEMP_CHAMBER_PIN            PF5
   #define CHAMBER_MINTEMP             5
   #define CHAMBER_MAXTEMP            60
   #define TEMP_CHAMBER_HYSTERESIS     1   // (°C) Temperature proximity considered "close enough" to the target
   //#define CHAMBER_LIMIT_SWITCHING
-  #define HEATER_CHAMBER_PIN         HEATER_6_PIN//44   // Chamber heater on/off pin
+  #define HEATER_CHAMBER_PIN          PI6//44   // Chamber heater on/off pin
   //#define HEATER_CHAMBER_INVERTING false
 
   #define CHAMBER_FAN               // Enable a fan on the chamber
@@ -475,10 +475,10 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
-/*#define E0_AUTO_FAN_PIN PC8 
+#define E0_AUTO_FAN_PIN PC8 
 #define E1_AUTO_FAN_PIN PI5
 #define E2_AUTO_FAN_PIN PI5
-#define E3_AUTO_FAN_PIN PI5*/
+#define E3_AUTO_FAN_PIN PI5
 #define E4_AUTO_FAN_PIN -1
 #define E5_AUTO_FAN_PIN -1
 #define E6_AUTO_FAN_PIN -1
@@ -506,7 +506,7 @@
  */
 #define CASE_LIGHT_ENABLE
 #if ENABLED(CASE_LIGHT_ENABLE)
-  #define CASE_LIGHT_PIN       HEATER_7_PIN   // Override the default pin if needed
+  #define CASE_LIGHT_PIN               PE13   // Override the default pin if needed
   #define INVERT_CASE_LIGHT false             // Set true if Case Light is ON when pin is LOW
   #define CASE_LIGHT_DEFAULT_ON true          // Set default power-up state on
   #define CASE_LIGHT_DEFAULT_BRIGHTNESS 105   // Set default power-up brightness (0-255, requires PWM pin)
@@ -1995,7 +1995,7 @@
  *
  * Note that M207 / M208 / M209 settings are saved to EEPROM.
  */
-//#define FWRETRACT
+#define FWRETRACT
 #if ENABLED(FWRETRACT)
   #define FWRETRACT_AUTORETRACT           // Override slicer retractions
   #if ENABLED(FWRETRACT_AUTORETRACT)

@@ -141,7 +141,7 @@
 
 // This defines the number of extruders
 // :[0, 1, 2, 3, 4, 5, 6, 7, 8]
-#define EXTRUDERS 4
+#define EXTRUDERS 3
 
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
@@ -315,9 +315,9 @@
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
 // For the other hotends it is their distance from the extruder 0 hotend.
-#define HOTEND_OFFSET_X { 0.0, -4.39, -4.39, -4.39 }  // (mm) relative X-offset for each nozzle
-#define HOTEND_OFFSET_Y { 0.0, 70.15, 70.15, 70.15 }  // (mm) relative Y-offset for each nozzle
-#define HOTEND_OFFSET_Z { 0.0,  0.00,  0.00,  0.00 }  // (mm) relative Z-offset for each nozzle
+#define HOTEND_OFFSET_X { 0.0, -6.71,  6.71}//, -4.39 }  // (mm) relative X-offset for each nozzle
+#define HOTEND_OFFSET_Y { 0.0, 11.63, 11.63}//, 70.15 }  // (mm) relative Y-offset for each nozzle
+#define HOTEND_OFFSET_Z { 0.0,   0.0,   0.0}//,  0.00 }  // (mm) relative Z-offset for each nozzle
 
 // @section machine
 
@@ -420,7 +420,7 @@
 #define TEMP_SENSOR_0 1
 #define TEMP_SENSOR_1 1
 #define TEMP_SENSOR_2 1
-#define TEMP_SENSOR_3 1
+#define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
 #define TEMP_SENSOR_5 0
 #define TEMP_SENSOR_6 0
@@ -595,7 +595,7 @@
 
 #define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
 #define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
-#define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
+//#define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
 
 //===========================================================================
 //============================= Mechanical Settings =========================
@@ -760,14 +760,14 @@
  *                                         X,    Y,    Z,  E0 [, E1[, E2...]]
  */ //fdk: todo: verhoog resolutie Z en E
 #define TronxyTitanExtruder 6400
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, TronxyTitanExtruder, TronxyTitanExtruder, TronxyTitanExtruder, TronxyTitanExtruder }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, TronxyTitanExtruder, TronxyTitanExtruder, TronxyTitanExtruder} //, TronxyTitanExtruder }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25, 25, 25, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25, 25, 25 } //, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -780,7 +780,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 1000, 10000, 10000, 10000 } //, 10000 }
 //fdk: todo: tronxy has half of values for X, Y and E0
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1012,7 +1012,8 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -40, -13, -4.175 }
+//bl-touch offset
+#define NOZZLE_TO_PROBE_OFFSET { -33.69, 5, -1.20 }
 //fdk: todo: tronxy has this: -40, 0, 0
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1036,7 +1037,7 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-//#define MULTIPLE_PROBING 2
+#define MULTIPLE_PROBING 2
 //#define EXTRA_PROBING    1
 
 /**
@@ -1126,10 +1127,10 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR false
+#define INVERT_E0_DIR true
 #define INVERT_E1_DIR true
 #define INVERT_E2_DIR true
-#define INVERT_E3_DIR true
+#define INVERT_E3_DIR false
 #define INVERT_E4_DIR false
 #define INVERT_E5_DIR false
 #define INVERT_E6_DIR false
@@ -1147,7 +1148,7 @@
 //#define Z_AFTER_HOMING  10      // (mm) Height to move to after homing Z
 
 // Direction of endstops when homing; 1=MAX, -1=MIN
-// :[-1,1]
+// :[-1, 1]
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
@@ -1156,7 +1157,9 @@
 
 // The size of the print bed
 #define X_BED_SIZE 330
-#define Y_BED_SIZE 285 //330 - 45 because the use of a 2nd hotend
+#define Y_BED_SIZE 316
+        //330 - 45 because the use of a 2nd hotend
+        //330 - 14 because of the place of first nozzle
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1164,7 +1167,8 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 380 //400 - 20 when using timebelt to keep both Z-axis in line.
+#define Z_MAX_POS 370
+        //400 - 20 when using timebelt to keep both Z-axis in line and -10 of R3 nozzle is 10 mm down.
 
 /**
  * Software Endstops
@@ -1209,7 +1213,7 @@
 #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
-  #define NUM_RUNOUT_SENSORS   4          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
+  #define NUM_RUNOUT_SENSORS   3          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
   #define FIL_RUNOUT_STATE     HIGH       // Pin state indicating that filament is NOT present.
   //#define FIL_RUNOUT_PULLUP               // Use internal pullup for filament runout pins.
   //#define FIL_RUNOUT_PULLDOWN           // Use internal pulldown for filament runout pins.
@@ -1418,8 +1422,8 @@
 // Manually set the home position. Leave these undefined for automatic settings.
 // If endstops are further than the begin of the printbed, use the offest to the endstop here, in negative.
 // For DELTA this is the top-center of the Cartesian print volume.
-//#define MANUAL_X_HOME_POS 0
-#define MANUAL_Y_HOME_POS -25
+#define MANUAL_X_HOME_POS -6
+#define MANUAL_Y_HOME_POS -40
 //#define MANUAL_Z_HOME_POS 0
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.

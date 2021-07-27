@@ -234,14 +234,14 @@
 // Temperature Sensors
 //
 #define TEMP_0_PIN                          PC1   // T1 <-> E0
-#define TEMP_1_PIN                          PC2   // T2 <-> E1
-#define TEMP_2_PIN                          PC2   // T3 <-> E2 //PC3
+#define TEMP_1_PIN                          PC1   // T2 <-> E1 //PC2
+#define TEMP_2_PIN                          PC1   // T3 <-> E2 //PC3
 
-#define TEMP_3_PIN                          PC2   // T4 <-> E3 //PA3
+#define TEMP_3_PIN                          PA3   // T4 <-> E3 //PA3
 #define TEMP_4_PIN                          PF9   // T5 <-> E4
 #define TEMP_5_PIN                          PF10  // T6 <-> E5
 #define TEMP_6_PIN                          PF7   // T7 <-> E6
-#define TEMP_7_PIN                          PF5   // T8 <-> E7
+//#define TEMP_7_PIN                          PF5   // T8 <-> E7
 
 #define TEMP_BED_PIN                        PC0   // T0 <-> Bed
 
@@ -269,12 +269,13 @@
 #define HEATER_3_PIN                        PD15  // Heater3
 #define HEATER_4_PIN                        PD13  // Heater4
 #define HEATER_5_PIN                        PD12  // Heater5
-#define HEATER_6_PIN                        PE13  // Heater6
-#define HEATER_7_PIN                        PI6   // Heater7
+//#define HEATER_6_PIN                        PE13  // Heater6
+//#define HEATER_7_PIN                        PI6   // Heater7
 
 #define HEATER_BED_PIN                      PA2   // Hotbed
 
-#define FAN_PIN                             PE5   // Fan0
+//#define FAN_PIN                             PE5   // Fan0  //With this the fans are auto starting when treshold is reached.
+#define FAN8_PIN                            PE5   // Fan0    //Still using this fan
 #define FAN1_PIN                            PE6   // Fan1
 #define FAN2_PIN                            PC8   // Fan2
 
