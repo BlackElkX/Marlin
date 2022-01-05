@@ -131,7 +131,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ghoti - Willy 3D"
+#define CUSTOM_MACHINE_NAME "WillyGhoti"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -315,9 +315,9 @@
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
 // For the other hotends it is their distance from the extruder 0 hotend.
-#define HOTEND_OFFSET_X { 0.0, -6.71,  6.71}//, -4.39 }  // (mm) relative X-offset for each nozzle
-#define HOTEND_OFFSET_Y { 0.0, 11.63, 11.63}//, 70.15 }  // (mm) relative Y-offset for each nozzle
-#define HOTEND_OFFSET_Z { 0.0,   0.0,   0.0}//,  0.00 }  // (mm) relative Z-offset for each nozzle
+#define HOTEND_OFFSET_X { 0.0, -6.71,  6.71 }//, -4.39 }  // (mm) relative X-offset for each nozzle
+#define HOTEND_OFFSET_Y { 0.0, 11.63, 11.63 }//, 70.15 }  // (mm) relative Y-offset for each nozzle
+#define HOTEND_OFFSET_Z { 0.0,   0.0,   0.0 }//,  0.00 }  // (mm) relative Z-offset for each nozzle
 
 // @section machine
 
@@ -427,7 +427,7 @@
 #define TEMP_SENSOR_7 0
 #define TEMP_SENSOR_BED 1
 #define TEMP_SENSOR_PROBE 0
-#define TEMP_SENSOR_CHAMBER 1000
+#define TEMP_SENSOR_CHAMBER 1
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
 #define DUMMY_THERMISTOR_998_VALUE 25
@@ -767,7 +767,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25, 25, 25 } //, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 300, 300, 10, 25, 25, 25 } //, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1324,8 +1324,8 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 4  //fdk: todo: tronxy uses 4 points
-  #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+  #define GRID_MAX_POINTS_X 3  //fdk: todo: tronxy uses 4 points
+  #define GRID_MAX_POINTS_Y 2  //GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
