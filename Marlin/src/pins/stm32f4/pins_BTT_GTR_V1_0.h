@@ -289,7 +289,7 @@
   #define TEMP_4_PIN                        PF9   // M5 TEMP2
   #define TEMP_5_PIN                        PF10  // M5 TEMP3
   #define TEMP_6_PIN                        PF7   // M5 TEMP4
-  #define TEMP_7_PIN                        PF5   // M5 TEMP5
+  //#define TEMP_7_PIN                        PF5   // M5 TEMP5
 #endif
 
 #define TEMP_BED_PIN                        PC0   // T0 <-> Bed
@@ -325,6 +325,8 @@
 
 #define HEATER_BED_PIN                      PA2   // Hotbed
 
+//#define FAN_PIN                             PE5   // Fan0  //With this the fans are auto starting when treshold is reached.
+#define FAN8_PIN                            PE5   // Fan0    //Still using this fan
 #define FAN_PIN                             PE5   // Fan0
 #define FAN1_PIN                            PE6   // Fan1
 #define FAN2_PIN                            PC8   // Fan2
@@ -333,8 +335,8 @@
   #define FAN3_PIN                          PI5   // M5 FAN1
   #define FAN4_PIN                          PE9   // M5 FAN2
   #define FAN5_PIN                          PE11  // M5 FAN3
-  //#define FAN6_PIN                        PC9   // M5 FAN4
-  //#define FAN7_PIN                        PE14  // M5 FAN5
+  #define FAN6_PIN                          PC9   // M5 FAN4
+  #define FAN7_PIN                          PE14  // M5 FAN5
 #endif
 
 #ifndef SDCARD_CONNECTION

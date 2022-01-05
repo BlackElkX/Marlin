@@ -189,11 +189,17 @@
 #endif
 
 #if TEMP_SENSOR_CHAMBER
-  //#define HEATER_CHAMBER_PIN      P2_04   // Required heater on/off pin (example: SKR 1.4 Turbo HE1 plug)
+  //fdk vanaf hier zoals versie 020007
+  #define TEMP_CHAMBER_PIN           PF5
+  #define CHAMBER_MINTEMP              5
+  #define CHAMBER_MAXTEMP             60
+  #define TEMP_CHAMBER_HYSTERESIS      1   // (°C) Temperature proximity considered "close enough" to the target
+  //fdk tot hier
+  #define HEATER_CHAMBER_PIN         PI6   // Required heater on/off pin (example: SKR 1.4 Turbo HE1 plug)
   //#define HEATER_CHAMBER_INVERTING false
   //#define FAN1_PIN                   -1   // Remove the fan signal on pin P2_04 (example: SKR 1.4 Turbo HE1 plug)
 
-  //#define CHAMBER_FAN               // Enable a fan on the chamber
+  #define CHAMBER_FAN               // Enable a fan on the chamber
   #if ENABLED(CHAMBER_FAN)
     //#define CHAMBER_FAN_INDEX   2   // Index of a fan to repurpose as the chamber fan. (Default: first unused fan)
     #define CHAMBER_FAN_MODE      2   // Fan control mode: 0=Static; 1=Linear increase when temp is higher than target; 2=V-shaped curve; 3=similar to 1 but fan is always on.
@@ -283,8 +289,8 @@
  * THERMAL_PROTECTION_HYSTERESIS and/or THERMAL_PROTECTION_PERIOD
  */
 #if ENABLED(THERMAL_PROTECTION_HOTENDS)
-  #define THERMAL_PROTECTION_PERIOD 40        // Seconds
-  #define THERMAL_PROTECTION_HYSTERESIS 4     // Degrees Celsius
+  #define THERMAL_PROTECTION_PERIOD     40    // Seconds
+  #define THERMAL_PROTECTION_HYSTERESIS  4    // Degrees Celsius
 
   //#define ADAPTIVE_FAN_SLOWING              // Slow part cooling fan if temperature drops
   #if BOTH(ADAPTIVE_FAN_SLOWING, PIDTEMP)
@@ -303,8 +309,8 @@
    * and/or decrease WATCH_TEMP_INCREASE. WATCH_TEMP_INCREASE should not be set
    * below 2.
    */
-  #define WATCH_TEMP_PERIOD  20               // Seconds
-  #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
+  #define WATCH_TEMP_PERIOD   20              // Seconds
+  #define WATCH_TEMP_INCREASE  2              // Degrees Celsius
 #endif
 
 /**
@@ -486,7 +492,7 @@
  * Hotend Idle Timeout
  * Prevent filament in the nozzle from charring and causing a critical jam.
  */
-//#define HOTEND_IDLE_TIMEOUT
+#define HOTEND_IDLE_TIMEOUT
 #if ENABLED(HOTEND_IDLE_TIMEOUT)
   #define HOTEND_IDLE_TIMEOUT_SEC (5*60)    // (seconds) Time without extruder movement to trigger protection
   #define HOTEND_IDLE_MIN_TRIGGER   180     // (°C) Minimum temperature to enable hotend protection
@@ -510,9 +516,9 @@
  * The fan turns on automatically whenever any driver is enabled and turns
  * off (or reduces to idle speed) shortly after drivers are turned off.
  */
-//#define USE_CONTROLLER_FAN
+#define USE_CONTROLLER_FAN
 #if ENABLED(USE_CONTROLLER_FAN)
-  //#define CONTROLLER_FAN_PIN -1           // Set a custom pin for the controller fan
+  #define CONTROLLER_FAN_PIN       FAN7_PIN // Set a custom pin for the controller fan
   //#define CONTROLLER_FAN_USE_Z_ONLY       // With this option only the Z axis is considered
   //#define CONTROLLER_FAN_IGNORE_Z         // Ignore Z stepper. Useful when stepper timeout is disabled.
   #define CONTROLLERFAN_SPEED_MIN         0 // (0-255) Minimum speed. (If set below this value the fan is turned off.)
@@ -523,7 +529,7 @@
   // Use TEMP_SENSOR_BOARD as a trigger for enabling the controller fan
   //#define CONTROLLER_FAN_MIN_BOARD_TEMP 40  // (°C) Turn on the fan if the board reaches this temperature
 
-  //#define CONTROLLER_FAN_EDITABLE         // Enable M710 configurable settings
+  #define CONTROLLER_FAN_EDITABLE         // Enable M710 configurable settings
   #if ENABLED(CONTROLLER_FAN_EDITABLE)
     #define CONTROLLER_FAN_MENU             // Enable the Controller Fan submenu
   #endif
@@ -609,24 +615,24 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
-#define E0_AUTO_FAN_PIN -1
-#define E1_AUTO_FAN_PIN -1
-#define E2_AUTO_FAN_PIN -1
-#define E3_AUTO_FAN_PIN -1
-#define E4_AUTO_FAN_PIN -1
-#define E5_AUTO_FAN_PIN -1
-#define E6_AUTO_FAN_PIN -1
-#define E7_AUTO_FAN_PIN -1
+#define E0_AUTO_FAN_PIN     PC8
+#define E1_AUTO_FAN_PIN     PI5
+#define E2_AUTO_FAN_PIN     PI5
+#define E3_AUTO_FAN_PIN     PI5
+#define E4_AUTO_FAN_PIN      -1
+#define E5_AUTO_FAN_PIN      -1
+#define E6_AUTO_FAN_PIN      -1
+#define E7_AUTO_FAN_PIN      -1
 #define CHAMBER_AUTO_FAN_PIN -1
-#define COOLER_AUTO_FAN_PIN -1
-#define COOLER_FAN_PIN -1
+#define COOLER_AUTO_FAN_PIN  -1
+#define COOLER_FAN_PIN       -1
 
-#define EXTRUDER_AUTO_FAN_TEMPERATURE 50
-#define EXTRUDER_AUTO_FAN_SPEED 255   // 255 == full speed
-#define CHAMBER_AUTO_FAN_TEMPERATURE 30
-#define CHAMBER_AUTO_FAN_SPEED 255
-#define COOLER_AUTO_FAN_TEMPERATURE 18
-#define COOLER_AUTO_FAN_SPEED 255
+#define EXTRUDER_AUTO_FAN_TEMPERATURE  50
+#define EXTRUDER_AUTO_FAN_SPEED       255   // 255 == full speed
+#define CHAMBER_AUTO_FAN_TEMPERATURE   30
+#define CHAMBER_AUTO_FAN_SPEED        255
+#define COOLER_AUTO_FAN_TEMPERATURE    18
+#define COOLER_AUTO_FAN_SPEED         255
 
 /**
  * Hotend Cooling Fans tachometers
@@ -676,15 +682,17 @@
 /**
  * M355 Case Light on-off / brightness
  */
-//#define CASE_LIGHT_ENABLE
+#define CASE_LIGHT_ENABLE
 #if ENABLED(CASE_LIGHT_ENABLE)
-  //#define CASE_LIGHT_PIN 4                  // Override the default pin if needed
-  #define INVERT_CASE_LIGHT false             // Set true if Case Light is ON when pin is LOW
-  #define CASE_LIGHT_DEFAULT_ON true          // Set default power-up state on
-  #define CASE_LIGHT_DEFAULT_BRIGHTNESS 105   // Set default power-up brightness (0-255, requires PWM pin)
+  #define CASE_LIGHT_PIN                PE13  // Override the default pin if needed
+  #define INVERT_CASE_LIGHT            false  // Set true if Case Light is ON when pin is LOW
+  #define CASE_LIGHT_DEFAULT_ON        false  // Set default power-up state on
+  #define CASE_LIGHT_DEFAULT_BRIGHTNESS    5  // Set default power-up brightness (0-255, requires PWM pin)
   //#define CASE_LIGHT_NO_BRIGHTNESS          // Disable brightness control. Enable for non-PWM lighting.
   //#define CASE_LIGHT_MAX_PWM 128            // Limit PWM duty cycle (0-255)
-  //#define CASE_LIGHT_MENU                   // Add Case Light options to the LCD menu
+  #if ENABLED(fdkLCD)
+    #define CASE_LIGHT_MENU                     // Add Case Light options to the LCD menu
+  #endif
   #if ENABLED(NEOPIXEL_LED)
     //#define CASE_LIGHT_USE_NEOPIXEL         // Use NeoPixel LED as case light
   #endif
@@ -848,7 +856,7 @@
 #define HOMING_BUMP_MM      { 5, 5, 2 }       // (mm) Backoff from endstops after first bump
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 
-//#define HOMING_BACKOFF_POST_MM { 2, 2, 2 }  // (mm) Backoff from endstops after homing
+#define HOMING_BACKOFF_POST_MM { 5, 5, 0 }    // (mm) Backoff from endstops after homing
 
 //#define QUICK_HOME                          // If G28 contains XY do a diagonal move first
 //#define HOME_Y_BEFORE_X                     // If G28 contains XY home Y before X
@@ -1284,14 +1292,14 @@
 
   // Add Probe Z Offset calibration to the Z Probe Offsets menu
   #if HAS_BED_PROBE
-    //#define PROBE_OFFSET_WIZARD
+    #define PROBE_OFFSET_WIZARD
     #if ENABLED(PROBE_OFFSET_WIZARD)
       //
       // Enable to init the Probe Z-Offset when starting the Wizard.
       // Use a height slightly above the estimated nozzle-to-probe Z offset.
       // For example, with an offset of -5, consider a starting height of -4.
       //
-      //#define PROBE_OFFSET_WIZARD_START_Z -4.0
+      #define PROBE_OFFSET_WIZARD_START_Z -4.05
 
       // Set a convenient position to do the calibration (probing point and nozzle/bed-distance)
       //#define PROBE_OFFSET_WIZARD_XY_POS { X_CENTER, Y_CENTER }
@@ -1315,13 +1323,13 @@
   #endif
 
   // Include a page of printer information in the LCD Main Menu
-  //#define LCD_INFO_MENU
+  #define LCD_INFO_MENU
   #if ENABLED(LCD_INFO_MENU)
     //#define LCD_PRINTER_INFO_IS_BOOTSCREEN // Show bootscreen(s) instead of Printer Info pages
   #endif
 
   // BACK menu items keep the highlight at the top
-  //#define TURBO_BACK_MENU_ITEM
+  #define TURBO_BACK_MENU_ITEM
 
   /**
    * LED Control Menu
@@ -1355,7 +1363,7 @@
 #endif // HAS_LCD_MENU
 
 #if ANY(HAS_DISPLAY, DWIN_CREALITY_LCD_ENHANCED, DWIN_CREALITY_LCD_JYERSUI)
-  //#define SOUND_MENU_ITEM   // Add a mute option to the LCD menu
+  #define SOUND_MENU_ITEM   // Add a mute option to the LCD menu
 #endif
 
 #if EITHER(HAS_DISPLAY, DWIN_CREALITY_LCD_ENHANCED)
@@ -1396,6 +1404,7 @@
     //#define PRINT_PROGRESS_SHOW_DECIMALS // Show progress with decimal digits
   #endif
 
+  //fdk: todo: progressbar enabled
   #if EITHER(HAS_MARLINUI_HD44780, IS_TFTGLCD_PANEL)
     //#define LCD_PROGRESS_BAR            // Show a progress bar on HD44780 LCDs for SD printing
     #if ENABLED(LCD_PROGRESS_BAR)
@@ -1461,12 +1470,12 @@
    * an option on the LCD screen to continue the print from the last-known
    * point in the file.
    */
-  //#define POWER_LOSS_RECOVERY
+  #define POWER_LOSS_RECOVERY
   #if ENABLED(POWER_LOSS_RECOVERY)
-    #define PLR_ENABLED_DEFAULT   false // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)
+    #define PLR_ENABLED_DEFAULT    true // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)
     //#define BACKUP_POWER_SUPPLY       // Backup power / UPS to move the steppers on power loss
     //#define POWER_LOSS_ZRAISE       2 // (mm) Z axis raise on resume (on power loss with UPS)
-    //#define POWER_LOSS_PIN         44 // Pin to detect power loss. Set to -1 to disable default pin on boards without module.
+    #define POWER_LOSS_PIN         PI11 // Pin to detect power loss. Set to -1 to disable default pin on boards without module.
     //#define POWER_LOSS_STATE     HIGH // State of pin indicating power loss
     //#define POWER_LOSS_PULLUP         // Set pullup / pulldown as appropriate for your sensor
     //#define POWER_LOSS_PULLDOWN
@@ -1507,18 +1516,18 @@
    *  - SDSORT_CACHE_NAMES will retain the sorted file listing in RAM. (Expensive!)
    *  - SDSORT_DYNAMIC_RAM only uses RAM when the SD menu is visible. (Use with caution!)
    */
-  //#define SDCARD_SORT_ALPHA
+  #define SDCARD_SORT_ALPHA
 
   // SD Card Sorting options
   #if ENABLED(SDCARD_SORT_ALPHA)
-    #define SDSORT_LIMIT       40     // Maximum number of sorted items (10-256). Costs 27 bytes each.
-    #define FOLDER_SORTING     -1     // -1=above  0=none  1=below
+    #define SDSORT_LIMIT          10  // Maximum number of sorted items (10-256). Costs 27 bytes each.
+    #define FOLDER_SORTING        -1  // -1=above  0=none  1=below
     #define SDSORT_GCODE       false  // Allow turning sorting on/off with LCD and M34 G-code.
     #define SDSORT_USES_RAM    false  // Pre-allocate a static array for faster pre-sorting.
     #define SDSORT_USES_STACK  false  // Prefer the stack for pre-sorting to give back some SRAM. (Negated by next 2 options.)
     #define SDSORT_CACHE_NAMES false  // Keep sorted items in RAM longer for speedy performance. Most expensive option.
     #define SDSORT_DYNAMIC_RAM false  // Use dynamic allocation (within SD menus). Least expensive option. Set SDSORT_LIMIT before use!
-    #define SDSORT_CACHE_VFATS 2      // Maximum number of 13-byte VFAT entries to use for sorting.
+    #define SDSORT_CACHE_VFATS     2  // Maximum number of 13-byte VFAT entries to use for sorting.
                                       // Note: Only affects SCROLL_LONG_FILENAMES with SDSORT_CACHE_NAMES but not SDSORT_DYNAMIC_RAM.
   #endif
 
@@ -1527,10 +1536,10 @@
   //#define UTF_FILENAME_SUPPORT
 
   // This allows hosts to request long names for files and folders with M33
-  //#define LONG_FILENAME_HOST_SUPPORT
+  #define LONG_FILENAME_HOST_SUPPORT
 
   // Enable this option to scroll long filenames in the SD card menu
-  //#define SCROLL_LONG_FILENAMES
+  #define SCROLL_LONG_FILENAMES
 
   // Leave the heaters on after Stop Print (not recommended!)
   //#define SD_ABORT_NO_COOLDOWN
@@ -1547,7 +1556,7 @@
    * On print completion the LCD Menu will open with the file selected.
    * You can just click to start the print, or navigate elsewhere.
    */
-  //#define SD_REPRINT_LAST_SELECTED_FILE
+  #define SD_REPRINT_LAST_SELECTED_FILE
 
   /**
    * Auto-report SdCard status with M27 S<seconds>
@@ -1630,7 +1639,7 @@
    *
    * :[ 'LCD', 'ONBOARD', 'CUSTOM_CABLE' ]
    */
-  //#define SDCARD_CONNECTION LCD
+  #define SDCARD_CONNECTION ONBOARD
 
   // Enable if SD detect is rendered useless (e.g., by using an SD extender)
   //#define NO_SD_DETECT
@@ -1946,18 +1955,18 @@
  *
  * Warning: Does not respect endstops!
  */
-//#define BABYSTEPPING
+#define BABYSTEPPING
 #if ENABLED(BABYSTEPPING)
   //#define INTEGRATED_BABYSTEPPING         // EXPERIMENTAL integration of babystepping into the Stepper ISR
   //#define BABYSTEP_WITHOUT_HOMING
   //#define BABYSTEP_ALWAYS_AVAILABLE       // Allow babystepping at all times (not just during movement).
   //#define BABYSTEP_XY                     // Also enable X/Y Babystepping. Not supported on DELTA!
-  #define BABYSTEP_INVERT_Z false           // Change if Z babysteps should go the other way
+  #define BABYSTEP_INVERT_Z           false // Change if Z babysteps should go the other way
   //#define BABYSTEP_MILLIMETER_UNITS       // Specify BABYSTEP_MULTIPLICATOR_(XY|Z) in mm instead of micro-steps
-  #define BABYSTEP_MULTIPLICATOR_Z  1       // (steps or mm) Steps or millimeter distance for each Z babystep
-  #define BABYSTEP_MULTIPLICATOR_XY 1       // (steps or mm) Steps or millimeter distance for each XY babystep
+  #define BABYSTEP_MULTIPLICATOR_Z       10 // (steps or mm) Steps or millimeter distance for each Z babystep
+  #define BABYSTEP_MULTIPLICATOR_XY       1 // (steps or mm) Steps or millimeter distance for each XY babystep
 
-  //#define DOUBLECLICK_FOR_Z_BABYSTEPPING  // Double-click on the Status Screen for Z Babystepping.
+  #define DOUBLECLICK_FOR_Z_BABYSTEPPING    // Double-click on the Status Screen for Z Babystepping.
   #if ENABLED(DOUBLECLICK_FOR_Z_BABYSTEPPING)
     #define DOUBLECLICK_MAX_INTERVAL 1250   // Maximum interval between clicks, in milliseconds.
                                             // Note: Extra time may be added to mitigate controller latency.
@@ -2148,7 +2157,7 @@
 
 //
 // G2/G3 Arc Support
-//
+//fdk: todo: check of min_arc_segment_mm = 1 moet zijn
 #define ARC_SUPPORT                   // Requires ~3226 bytes
 #if ENABLED(ARC_SUPPORT)
   #define MIN_ARC_SEGMENT_MM      0.1 // (mm) Minimum length of each arc segment
@@ -2371,7 +2380,7 @@
  *
  * Note that M207 / M208 / M209 settings are saved to EEPROM.
  */
-//#define FWRETRACT
+#define FWRETRACT
 #if ENABLED(FWRETRACT)
   #define FWRETRACT_AUTORETRACT             // Override slicer retractions
   #if ENABLED(FWRETRACT_AUTORETRACT)
@@ -2486,7 +2495,9 @@
  *
  * Enable PARK_HEAD_ON_PAUSE to add the G-code M125 Pause and Park.
  */
-//#define ADVANCED_PAUSE_FEATURE
+#if ENABLED(fdkLCD)
+  #define ADVANCED_PAUSE_FEATURE
+#endif
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
   #define PAUSE_PARK_RETRACT_FEEDRATE         60  // (mm/s) Initial retract feedrate.
   #define PAUSE_PARK_RETRACT_LENGTH            2  // (mm) Initial retract.
@@ -2690,7 +2701,7 @@
   #if AXIS_IS_TMC(X)
     #define X_CURRENT       800        // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for sensorless homing
-    #define X_MICROSTEPS     16        // 0..256
+    #define X_MICROSTEPS    256        // 0..256
     #define X_RSENSE          0.11
     #define X_CHAIN_POS      -1        // -1..0: Not chained. 1: MCU MOSI connected. 2: Next in chain, ...
     //#define X_INTERPOLATE  true      // Enable to override 'INTERPOLATE' for the X axis
@@ -2710,7 +2721,7 @@
   #if AXIS_IS_TMC(Y)
     #define Y_CURRENT       800
     #define Y_CURRENT_HOME  Y_CURRENT
-    #define Y_MICROSTEPS     16
+    #define Y_MICROSTEPS    256
     #define Y_RSENSE          0.11
     #define Y_CHAIN_POS      -1
     //#define Y_INTERPOLATE  true
@@ -2730,7 +2741,7 @@
   #if AXIS_IS_TMC(Z)
     #define Z_CURRENT       800
     #define Z_CURRENT_HOME  Z_CURRENT
-    #define Z_MICROSTEPS     16
+    #define Z_MICROSTEPS    256
     #define Z_RSENSE          0.11
     #define Z_CHAIN_POS      -1
     //#define Z_INTERPOLATE  true
@@ -2799,7 +2810,7 @@
 
   #if AXIS_IS_TMC(E0)
     #define E0_CURRENT      800
-    #define E0_MICROSTEPS    16
+    #define E0_MICROSTEPS   256
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
     //#define E0_INTERPOLATE true
@@ -2970,7 +2981,7 @@
    * Define your own with:
    * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
    */
-  #define CHOPPER_TIMING CHOPPER_DEFAULT_12V        // All axes (override below)
+  #define CHOPPER_TIMING CHOPPER_DEFAULT_24V        // All axes (override below)
   //#define CHOPPER_TIMING_X  CHOPPER_TIMING        // For X Axes (override below)
   //#define CHOPPER_TIMING_X2 CHOPPER_TIMING_X
   //#define CHOPPER_TIMING_Y  CHOPPER_TIMING        // For Y Axes (override below)
@@ -3002,7 +3013,9 @@
    * M912 - Clear stepper driver overtemperature pre-warn condition flag.
    * M122 - Report driver parameters (Requires TMC_DEBUG)
    */
-  //#define MONITOR_DRIVER_STATUS
+  #if ENABLED(TMC_DEBUG)
+    #define MONITOR_DRIVER_STATUS
+  #endif
 
   #if ENABLED(MONITOR_DRIVER_STATUS)
     #define CURRENT_STEP_DOWN     50  // [mA]
@@ -3064,7 +3077,7 @@
    *
    * Comment *_STALL_SENSITIVITY to disable sensorless homing for that axis.
    */
-  //#define SENSORLESS_HOMING // StallGuard capable drivers only
+  #define SENSORLESS_HOMING // StallGuard capable drivers only
 
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
@@ -3072,7 +3085,7 @@
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
     #define Y_STALL_SENSITIVITY  8
     #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
-    //#define Z_STALL_SENSITIVITY  8
+    //#define Z_STALL_SENSITIVITY  8           //fdk: todo: stallguard Z = 63
     //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
     //#define Z3_STALL_SENSITIVITY Z_STALL_SENSITIVITY
     //#define Z4_STALL_SENSITIVITY Z_STALL_SENSITIVITY
@@ -4308,12 +4321,12 @@
 //
 // M42 - Set pin states
 //
-//#define DIRECT_PIN_CONTROL
+#define DIRECT_PIN_CONTROL
 
 //
 // M43 - display pin status, toggle pins, watch pins, watch endstops & toggle LED, test servo probe
 //
-//#define PINS_DEBUGGING
+#define PINS_DEBUGGING
 
 // Enable Marlin dev mode which adds some special commands
 //#define MARLIN_DEV_MODE
