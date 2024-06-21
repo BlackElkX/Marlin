@@ -854,7 +854,7 @@
 
 // Enable one of the options below for CoreXY, CoreXZ, or CoreYZ kinematics,
 // either in the usual order or reversed
-//#define COREXY
+#define COREXY
 //#define COREXZ
 //#define COREYZ
 //#define COREYX
@@ -1177,7 +1177,7 @@
  *                                         X,    Y,    Z,  E0 [, E1[, E2...]]
  */ //fdk: todo: verhoog resolutie Z en E
 #define TronxyTitanExtruderSPU 6400
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, TronxyTitanExtruderSPU } //, TronxyTitanExtruder }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, TronxyTitanExtruderSPU }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1199,7 +1199,7 @@
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
 #define TronxyTitanExtruderMAXACC 10000
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 1000, TronxyTitanExtruderMAXACC } //, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 1000, TronxyTitanExtruderMAXACC }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1289,7 +1289,8 @@
 #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+//fdk BLTOUCH
+#define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1345,6 +1346,14 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
+
+//fdk: todo: bug melden en wanneer opgelost, code weghalen
+#ifdef Z_MIN_PIN
+  #undef Z_MIN_PIN
+#endif
+//#define Z_MIN_PIN PH11
+//fdk: todo: tot hier
+
 //fdk BLTOUCH
 #define BLTOUCH
 
