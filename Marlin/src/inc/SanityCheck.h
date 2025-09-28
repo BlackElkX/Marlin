@@ -77,18 +77,20 @@
  * tell you about new options that you might find useful. So it's recommended to transfer
  * your settings to new Configuration files matching your Marlin version as soon as possible.
  */
-#define HEXIFY(H) _CAT(0x,H)
-#if !defined(CONFIGURATION_H_VERSION) || HEXIFY(CONFIGURATION_H_VERSION) < HEXIFY(REQUIRED_CONFIGURATION_H_VERSION)
-  #error "Your Configuration.h file is for an old version of Marlin. Downgrade Marlin or upgrade your Configuration.h."
-#elif HEXIFY(CONFIGURATION_H_VERSION) > HEXIFY(REQUIRED_CONFIGURATION_H_VERSION)
-  #error "Your Configuration.h file is for a newer version of Marlin. Upgrade Marlin or downgrade your Configuration.h."
-#endif
-#if !defined(CONFIGURATION_ADV_H_VERSION) || HEXIFY(CONFIGURATION_ADV_H_VERSION) < HEXIFY(REQUIRED_CONFIGURATION_ADV_H_VERSION)
-  #error "Your Configuration_adv.h file is for an old version of Marlin. Downgrade Marlin or upgrade your Configuration_adv.h."
-#elif HEXIFY(CONFIGURATION_ADV_H_VERSION) > HEXIFY(REQUIRED_CONFIGURATION_ADV_H_VERSION)
-  #error "Your Configuration_adv.h file is for a newer version of Marlin. Upgrade Marlin or downgrade your Configuration_adv.h."
-#endif
-#undef HEXIFY
+#if USE_STD_CONFIGS
+  #define HEXIFY(H) _CAT(0x,H)
+  #if !defined(CONFIGURATION_H_VERSION) || HEXIFY(CONFIGURATION_H_VERSION) < HEXIFY(REQUIRED_CONFIGURATION_H_VERSION)
+    #error "Your Configuration.h file is for an old version of Marlin. Downgrade Marlin or upgrade your Configuration.h."
+  #elif HEXIFY(CONFIGURATION_H_VERSION) > HEXIFY(REQUIRED_CONFIGURATION_H_VERSION)
+    #error "Your Configuration.h file is for a newer version of Marlin. Upgrade Marlin or downgrade your Configuration.h."
+  #endif
+  #if !defined(CONFIGURATION_ADV_H_VERSION) || HEXIFY(CONFIGURATION_ADV_H_VERSION) < HEXIFY(REQUIRED_CONFIGURATION_ADV_H_VERSION)
+    #error "Your Configuration_adv.h file is for an old version of Marlin. Downgrade Marlin or upgrade your Configuration_adv.h."
+  #elif HEXIFY(CONFIGURATION_ADV_H_VERSION) > HEXIFY(REQUIRED_CONFIGURATION_ADV_H_VERSION)
+    #error "Your Configuration_adv.h file is for a newer version of Marlin. Upgrade Marlin or downgrade your Configuration_adv.h."
+  #endif
+  #undef HEXIFY
+#endif // HAS_IGNORED_CONFIGS
 
 /**
  * Warnings for old configurations
@@ -4591,6 +4593,12 @@ static_assert(_PLUS_TEST(3), "DEFAULT_MAX_ACCELERATION values must be positive."
   #endif
   #if HAS_DYNAMIC_FREQ_G
     static_assert(FTM_DEFAULT_DYNFREQ_MODE != dynFreqMode_MASS_BASED, "dynFreqMode_MASS_BASED requires an X axis and an extruder.");
+  #endif
+  #if ENABLED(FTM_SMOOTHING)
+    static_assert(FTM_SMOOTHING_TIME_X <= FTM_MAX_SMOOTHING_TIME, "FTM_SMOOTHING_TIME_X must be <= FTM_MAX_SMOOTHING_TIME.");
+    static_assert(FTM_SMOOTHING_TIME_Y <= FTM_MAX_SMOOTHING_TIME, "FTM_SMOOTHING_TIME_Y must be <= FTM_MAX_SMOOTHING_TIME.");
+    static_assert(FTM_SMOOTHING_TIME_Z <= FTM_MAX_SMOOTHING_TIME, "FTM_SMOOTHING_TIME_Z must be <= FTM_MAX_SMOOTHING_TIME.");
+    static_assert(FTM_SMOOTHING_TIME_E <= FTM_MAX_SMOOTHING_TIME, "FTM_SMOOTHING_TIME_E must be <= FTM_MAX_SMOOTHING_TIME.");
   #endif
 #endif
 
