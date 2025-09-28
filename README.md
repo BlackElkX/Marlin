@@ -74,7 +74,7 @@ The case light is connected to the heater E2, the chamber heater on E1.
 version 4.0.2:
 Working firmware for Ghoti printer.
 Done:
-- Case light
+- Case light start at 42 intensity 0--255
 - USB thumb drive
 - 3 extruders
 - 1 hotend
