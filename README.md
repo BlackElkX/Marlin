@@ -62,6 +62,31 @@
 </tr>
 </table>
 
+## Ghoti 3D printer core XY multi extruder
+This is for a core X-Y DIY printer, with build plate of 330x330x330
+I based this on the Tronxy X5SA printer.
+Because I use a multi extruder, the build plate is limited to 330x316x310
+It is running on 24V and using a Octopus Pro V1 mainboard from Big Tree Tech
+Chip is STM32F429ZG
+To use the USB port as a thumb drive reader, you must use STM32F429ZG_btt_usb_flash_drive in stead of BIGTREE_OCTOPUS_PRO_V1_F429_USB
+The case light is connected to the heater E2, the chamber heater on E1.
+
+version 4.0.2:
+Working firmware for Ghoti printer.
+Done:
+- Case light
+- USB thumb drive
+- 3 extruders
+- 1 hotend
+- default temperatures
+Todo:
+- z-offset correction
+- SD-card
+- extruder offsets automatic
+- 4th extruder?
+- retraction correction
+- homing: 2nd homing of X/Y does not work directly, must be done twice.
+
 Additional documentation can be found at the [Marlin Home Page](//marlinfw.org/).
 Please test this firmware and let us know if it misbehaves in any way. Volunteers are standing by!
 
