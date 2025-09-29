@@ -131,11 +131,11 @@
 //#define BLUETOOTH
 
 //FDK version numbers of marlin
-#define SHORT_BUILD_VERSION "ghoti-4.0.4"
+#define SHORT_BUILD_VERSION "ghoti-4.0.5"
 #define DETAILED_BUILD_VERSION "Marlin 2.1.3 bugfix" 
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ghoti  4.0.4  "
+#define CUSTOM_MACHINE_NAME "Ghoti 4.0.5   "
 //#define CONFIGURABLE_MACHINE_NAME // Add G-code M550 to set/report the machine name
 
 // Printer's unique ID, used by some programs to differentiate between machines.
@@ -1347,11 +1347,11 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 20, 50 }   //FDK feed rates
+#define DEFAULT_MAX_FEEDRATE          { 300, 300, 100, 50 }   //FDK feed rates, Z was 20
 
-//#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
+#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 40, 100 } // ...or, set your own edit limits  //FDK own limits
+  #define MAX_FEEDRATE_EDIT_VALUES    { 1200, 1200, 500, 500 } // ...or, set your own edit limits  //FDK own limits
 #endif
 
 /**
@@ -1360,13 +1360,13 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-//FDK accelerations
+//FDK accelerations, Z was 1000, but it is now 2000
 #define TronxyTitanExtruderMAXACC 10000
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 1000, TronxyTitanExtruderMAXACC }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 2000, TronxyTitanExtruderMAXACC }
 
-//#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
+#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
-  #define MAX_ACCEL_EDIT_VALUES       { 6000, 6000, 200, 20000 } // ...or, set your own edit limits
+  #define MAX_ACCEL_EDIT_VALUES       { 6000, 6000, 4000, 20000 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -1711,7 +1711,7 @@
 //#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
 
 //FDK bl-touch offset
-#define NOZZLE_TO_PROBE_OFFSET { -33.69, 5, -1.20 }
+#define NOZZLE_TO_PROBE_OFFSET { -33.69, 5, -4.23 } //FDK Z offset was -1.20
 //FDK Tronxy has this: -40, 0, 0
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
@@ -1805,7 +1805,7 @@
 #define Z_AFTER_PROBING            10 // (mm) Z position after probing is done      //FDK probing
 
 //FDK Z after probing on 10
-#define Z_PROBE_LOW_POINT          -2 // (mm) Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -1 // (mm) Farthest distance below the trigger-point to go before stopping
 
 // For M851 provide ranges for adjusting the X, Y, and Z probe offsets
 //#define PROBE_OFFSET_XMIN -50   // (mm)

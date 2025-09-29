@@ -773,7 +773,7 @@
   #define CASE_LIGHT_PIN                HEATER_3_PIN      // Override the default pin if needed
   #define INVERT_CASE_LIGHT             false             // Set true if Case Light is ON when pin is LOW
   #define CASE_LIGHT_DEFAULT_ON         true              // Set default power-up state on
-  #define CASE_LIGHT_DEFAULT_BRIGHTNESS 42                // Set default power-up brightness (0-255, requires PWM pin)
+  #define CASE_LIGHT_DEFAULT_BRIGHTNESS 21                // Set default power-up brightness (0-255, requires PWM pin)
   //#define CASE_LIGHT_NO_BRIGHTNESS                      // Disable brightness control. Enable for non-PWM lighting.
   //#define CASE_LIGHT_MAX_PWM 128                        // Limit PWM duty cycle (0-255)
   #define CASE_LIGHT_MENU                                 // Add Case Light options to the LCD menu
@@ -3542,6 +3542,7 @@
    * @section tmc/stallguard
    */
   //FDK homing: sensorless
+  //disabled, because it does not work correct with my core xy printer. It has endstops so it is not needed
   //#define SENSORLESS_HOMING // StallGuard capable drivers only
 
   #if ANY(SENSORLESS_HOMING, SENSORLESS_PROBING)

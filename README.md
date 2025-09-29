@@ -72,6 +72,11 @@ Chip is STM32F429ZG
 To use the USB port as a thumb drive reader, you must use STM32F429ZG_btt_usb_flash_drive in stead of BIGTREE_OCTOPUS_PRO_V1_F429_USB
 The case light is connected to the heater E2, the chamber heater on E1.
 
+version 4.0.5:
+- Case light start at 21 intensity
+- Z-probe distance of bed set to -4.23 (NOZZLE_TO_PROBE_OFFSET)
+- Speed-up z moving
+
 version 4.0.4:
 - Homing bug fix: disable stallguard
 
@@ -80,19 +85,21 @@ version 4.0.3:
 
 version 4.0.2:
 Working firmware for Ghoti printer.
+
 Done:
 - Case light start at 42 intensity 0--255
 - USB thumb drive
 - 3 extruders
 - 1 hotend
 - default temperatures
+- homing: 2nd homing of X/Y does not work directly, must be done twice.
+
 Todo:
 - z-offset correction
 - SD-card
 - extruder offsets automatic
 - 4th extruder?
 - retraction correction
-- homing: 2nd homing of X/Y does not work directly, must be done twice.
 
 Additional documentation can be found at the [Marlin Home Page](//marlinfw.org/).
 Please test this firmware and let us know if it misbehaves in any way. Volunteers are standing by!
