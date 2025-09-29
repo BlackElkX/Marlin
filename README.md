@@ -72,6 +72,12 @@ Chip is STM32F429ZG
 To use the USB port as a thumb drive reader, you must use STM32F429ZG_btt_usb_flash_drive in stead of BIGTREE_OCTOPUS_PRO_V1_F429_USB
 The case light is connected to the heater E2, the chamber heater on E1.
 
+version 4.0.4:
+- Homing bug fix: disable stallguard
+
+version 4.0.3:
+- updated to last Marlin bugfix source
+
 version 4.0.2:
 Working firmware for Ghoti printer.
 Done:

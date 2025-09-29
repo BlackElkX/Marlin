@@ -61,7 +61,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(Frederik De Kegel)" // Original author or contributor.
+#define STRING_CONFIG_H_AUTHOR "Frederik De Kegel" // Original author or contributor.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 // @section machine
@@ -131,11 +131,11 @@
 //#define BLUETOOTH
 
 //FDK version numbers of marlin
-#define SHORT_BUILD_VERSION "ghoti-4.0.2"
+#define SHORT_BUILD_VERSION "ghoti-4.0.4"
 #define DETAILED_BUILD_VERSION "Marlin 2.1.3 bugfix" 
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ghoti version 4.0.2"
+#define CUSTOM_MACHINE_NAME "Ghoti  4.0.4  "
 //#define CONFIGURABLE_MACHINE_NAME // Add G-code M550 to set/report the machine name
 
 // Printer's unique ID, used by some programs to differentiate between machines.
