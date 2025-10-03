@@ -131,11 +131,11 @@
 //#define BLUETOOTH
 
 //FDK version numbers of marlin
-#define SHORT_BUILD_VERSION "ghoti-4.0.5"
+#define SHORT_BUILD_VERSION "ghoti-4.0.6"
 #define DETAILED_BUILD_VERSION "Marlin 2.1.3 bugfix" 
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ghoti 4.0.5   "
+#define CUSTOM_MACHINE_NAME "Ghoti 4.0.6   "
 //#define CONFIGURABLE_MACHINE_NAME // Add G-code M550 to set/report the machine name
 
 // Printer's unique ID, used by some programs to differentiate between machines.
@@ -177,7 +177,7 @@
 #define E0_DRIVER_TYPE TMC5160
 #define E1_DRIVER_TYPE TMC5160
 #define E2_DRIVER_TYPE TMC5160
-//#define E3_DRIVER_TYPE TMC5160
+#define E3_DRIVER_TYPE TMC5160
 //#define E4_DRIVER_TYPE TMC5160
 //#define E5_DRIVER_TYPE TMC5160
 //#define E6_DRIVER_TYPE TMC5160
@@ -229,7 +229,7 @@
 
 // This defines the number of extruders
 // :[0, 1, 2, 3, 4, 5, 6, 7, 8]
-#define EXTRUDERS 3   //FDK extruders
+#define EXTRUDERS 4   //FDK extruders
 
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
@@ -386,9 +386,9 @@
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
 // For the other hotends it is their distance from the extruder 0 hotend.
 //FDK the 3 nozzels are offset to middle
-#define HOTEND_OFFSET_X { 0.0, -6.71,  6.71 }  // (mm) relative X-offset for each nozzle
-#define HOTEND_OFFSET_Y { 0.0, 11.63, 11.63 }  // (mm) relative Y-offset for each nozzle
-#define HOTEND_OFFSET_Z { 0.0,  0.00,  0.00 }  // (mm) relative Z-offset for each nozzle
+#define HOTEND_OFFSET_X { 0.0, -6.71,  6.71,  0.00}  // (mm) relative X-offset for each nozzle
+#define HOTEND_OFFSET_Y { 0.0, 11.63, 11.63, 11.63}  // (mm) relative Y-offset for each nozzle
+#define HOTEND_OFFSET_Z { 0.0,  0.00,  0.00,  0.00}  // (mm) relative Z-offset for each nozzle
 
 // @section multi-material
 
@@ -2047,14 +2047,14 @@
 #define FIL_RUNOUT_PIN           PG12  // E0DET
 #define FIL_RUNOUT2_PIN          PG13  // E1DET
 #define FIL_RUNOUT3_PIN          PG14  // E2DET
-//#define FIL_RUNOUT4_PIN          PG15  // E3DET
+#define FIL_RUNOUT4_PIN          PG15  // E3DET
 //#define FIL_RUNOUT5_PIN          PG11  // E4DET
 //fdk till here*/
 //FDK set FILAMENT runout sensor and set State to high
 #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
-  #define NUM_RUNOUT_SENSORS   3          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
+  #define NUM_RUNOUT_SENSORS   4          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
 
   #define FIL_RUNOUT_STATE     HIGH       // Pin state indicating that filament is NOT present.
   #define FIL_RUNOUT_PULLUP               // Use internal pullup for filament runout pins.
