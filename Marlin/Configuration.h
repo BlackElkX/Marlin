@@ -81,7 +81,7 @@
  *
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
  */
-#define SERIAL_PORT 3   //FDK serial port config
+#define SERIAL_PORT -1   //FDK serial port config
 
 /**
  * Serial Port Baud Rate
@@ -131,11 +131,11 @@
 //#define BLUETOOTH
 
 //FDK version numbers of marlin
-#define SHORT_BUILD_VERSION "ghoti-4.0.6"
+#define SHORT_BUILD_VERSION "ghoti-4.1.1"
 #define DETAILED_BUILD_VERSION "Marlin 2.1.3 bugfix" 
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ghoti 4.0.6   "
+#define CUSTOM_MACHINE_NAME "Ghoti 4.1.1   "
 //#define CONFIGURABLE_MACHINE_NAME // Add G-code M550 to set/report the machine name
 
 // Printer's unique ID, used by some programs to differentiate between machines.
@@ -1292,7 +1292,7 @@
 //#define ENDSTOP_NOISE_THRESHOLD 2
 
 // Check for stuck or disconnected endstops during homing moves.
-#define DETECT_BROKEN_ENDSTOP  //FDK endstops
+//#define DETECT_BROKEN_ENDSTOP  //FDK endstops
 
 //=============================================================================
 //============================== Movement Settings ============================
@@ -1312,7 +1312,7 @@
  * following movement settings. If fewer factors are given than the
  * total number of extruders, the last value applies to the rest.
  */
-//#define DISTINCT_E_FACTORS
+#define DISTINCT_E_FACTORS
 
 /**
  * Default Axis Steps Per Unit (linear=steps/mm, rotational=steps/°)
@@ -1334,8 +1334,8 @@
  * 1/256 => 1280.00  4560.00                  6240.00     6400.00
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */ //fdk: todo: verhoog resolutie Z en E
-#define TronxyTitanExtruderSPU 6400
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, TronxyTitanExtruderSPU }
+#define TronxyTitanExtruderSPU 6400 //9142.857142857142857
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, 9142.8571, TronxyTitanExtruderSPU }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
@@ -1361,12 +1361,13 @@
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
 //FDK accelerations, Z was 1000, but it is now 2000
-#define TronxyTitanExtruderMAXACC 10000
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 2000, TronxyTitanExtruderMAXACC }
+#define TronxyTitanExtruderDefaultACC 20000
+#define TronxyTitanExtruderMaximalACC 40000
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 2000, TronxyTitanExtruderDefaultACC }
 
 #define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
-  #define MAX_ACCEL_EDIT_VALUES       { 6000, 6000, 4000, 20000 } // ...or, set your own edit limits
+  #define MAX_ACCEL_EDIT_VALUES       { 6000, 6000, 4000, TronxyTitanExtruderMaximalACC } // ...or, set your own edit limits
 #endif
 
 /**
@@ -1905,7 +1906,7 @@
 #define INVERT_E0_DIR true
 #define INVERT_E1_DIR true
 #define INVERT_E2_DIR true
-#define INVERT_E3_DIR false
+#define INVERT_E3_DIR true
 #define INVERT_E4_DIR false
 #define INVERT_E5_DIR false
 #define INVERT_E6_DIR false
