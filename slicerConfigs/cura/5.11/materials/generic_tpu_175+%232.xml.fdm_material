@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<fdmmaterial xmlns="http://www.ultimaker.com/material" xmlns:cura="http://www.ultimaker.com/cura" version="1.3">
+  <metadata>
+    <name>
+      <brand>Python Flex</brand>
+      <material>TPU 98A</material>
+      <color>Generic</color>
+      <label>TPU 98A</label>
+    </name>
+    <version>11</version>
+    <color_code>#51d6d7</color_code>
+    <description>Wear and tear resistant. TPU features a Shore-A hardness of 98 and an elongation of up to 480% at break. Suitable for applications that require slight flexibility, wear and tear, and chemical resistance.</description>
+    <adhesion_info>Kan op verwarmd bed, max 60, min 0</adhesion_info>
+    <GUID>f1512974-765a-4e95-922f-23f718b4d5bf</GUID>
+  </metadata>
+  <properties>
+    <diameter>1.75</diameter>
+    <density>1.16</density>
+  </properties>
+  <settings>
+    <setting key="print temperature">228.0</setting>
+    <setting key="surface energy">100</setting>
+    <setting key="adhesion tendency">3</setting>
+    <setting key="retraction amount">6.5</setting>
+    <setting key="heated bed temperature">50.0</setting>
+    <setting key="standby temperature">228.0</setting>
+    <setting key="retraction speed">25.0</setting>
+    <setting key="build volume temperature">27</setting>
+    <cura:setting key="material_crystallinity">true</cura:setting>
+  </settings>
+</fdmmaterial>

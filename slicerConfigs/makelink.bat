@@ -1,0 +1,1 @@
+mklink /D cura "c:\ghoti\projects\3DPrinter\Marlin bugfix-2.1.x\slicerConfigs\cura"

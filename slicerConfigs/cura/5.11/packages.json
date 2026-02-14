@@ -1,0 +1,650 @@
+{
+    "dismissed": [
+        "CuraFreeCADPlugin",
+        "CuraBlenderPlugin",
+        "CuraOpenSCADPlugin"
+    ],
+    "installed": {
+        "ArcWelderPlugin": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.0/cache/cura_packages/ArcWelderPlugin.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "fieldofview",
+                    "display_name": "fieldOfView",
+                    "email": "aldo@fieldofview.com",
+                    "website": "http://fieldofview.com"
+                },
+                "description": "Converts multiple subsequent G0/G1 moves to G2/G3 arcs. This reduces the number of gcode commands necessary to make curved movements, thus potentially removing stutter caused by buffer under-runs in the 3d printer controller.\n\nThis plugin uses ArcWelder by @FormerLurker: https://github.com/FormerLurker/ArcWelderLib\n\nThe plugin adds several settings to the \"Special Modes\" category in Cura. The \"Arc Welder\" setting needs to be checked to enable ArcWelder processing. See the plugin website for a more thorough description of the settings.\n\nThe development of this plugin can be sponsored via Github Sponsors (https://github.com/sponsors/fieldofview) or Paypal (https://www.paypal.me/fieldofview)",
+                "display_name": "Arc Welder",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "ArcWelderPlugin",
+                "package_type": "plugin",
+                "package_version": "3.6.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.0.0",
+                "website": "https://github.com/fieldOfView/Cura-ArcWelderPlugin"
+            }
+        },
+        "AutoTowersGenerator": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.10/cache/cura_packages/AutoTowersGenerator.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "Kartchnb",
+                    "display_name": "Brad Kartchner",
+                    "email": "kartchnb@gmail.com",
+                    "website": "https://github.com/kartchnb"
+                },
+                "description": "Allows you to quickly and easily print several types of calibration towers without messing around with gcode or post-processing -  Just click and print!\n\nMany pre-generated towers are included in the plugin, but, if OpenSCAD is installed (openscad.org), custom towers can be generated and printed with very little effort.",
+                "display_name": "AutoTowers Generator",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "AutoTowersGenerator",
+                "package_type": "plugin",
+                "package_version": "2.7.2",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.6.0",
+                "website": "https://github.com/kartchnb/AutoTowersGenerator"
+            }
+        },
+        "BASF_Ultrafuse_316L": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.10/cache/cura_packages/BASF_Ultrafuse_316L.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "rlsijlbing",
+                    "display_name": "Forward AM",
+                    "email": "info_nl@basf-3dps.com",
+                    "website": "https://forward-am.com/material-portfolio/ultrafuse-filaments-for-fused-filaments-fabrication-fff/"
+                },
+                "description": "Metal-polymer composite filament to produce metal components in a stainless-steel type 316L with subsequently an industry-standard debinding and sintering process.\nPrinting profiles have been developed to provide quality, flexibility, and reliability for the wide range of parts and applications made possible with Ultrafuse 316L. The Standard profile is the ideal starting point for both new users and challenging applications.\n\nProfile Descriptions:\n\nStandard:\nTuned for maximum density, high mechanical strength, medium feature detail. \n\nLightweight Experimental:\nThis profile reduces part mass and printing time while maintaining acceptable structural integrity; intended for experienced users. \n\nAnnotation:\nFor optimal automated scaling and printing experience extruder 2 must be disabled.",
+                "display_name": "Ultrafuse 316L",
+                "is_active": false,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "BASF_Ultrafuse_316L",
+                "package_type": "material",
+                "package_version": "5.2.2",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.9.0",
+                "website": "https://forward-am.com/find-material/filaments/ultrafuse-316l/"
+            }
+        },
+        "BananaSplit": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.11/cache/cura_packages/BananaSplit.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "jarrrgh",
+                    "display_name": "jarrrgh",
+                    "email": "jarrrgh+ultimaker@gmail.com",
+                    "website": "https://github.com/jarrrgh"
+                },
+                "description": "Split model with one easy action along the build plate. Position your model so that part of it goes below the build plate and press Split button. The tool will reflect anything below the surface on top of it. You may then move the original model along the Z axis to fine tune the \"cut\" real-time.\n\nThis is a pseudo-split, which means objects are not actually split in half. Instead, they get duplicated and mirrored along the build plate. Cura takes care, that nothing below the build plate gets printed.",
+                "display_name": "Banana Split",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "BananaSplit",
+                "package_type": "plugin",
+                "package_version": "1.0.4",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.11.0",
+                "website": "https://github.com/jarrrgh/banana-split"
+            }
+        },
+        "BarbarianPlugin": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.0/cache/cura_packages/BarbarianPlugin.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "nallath",
+                    "display_name": "nallath",
+                    "email": "j.vankessel@ultimaker.com",
+                    "website": "http://www.github.com/nallath"
+                },
+                "description": "An extension that enables users to quickly convert models from inches to metric",
+                "display_name": "Barbarian Units",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "BarbarianPlugin",
+                "package_type": "plugin",
+                "package_version": "2.3.2",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.0.0",
+                "website": "http://www.github.com/nallath/barbarianPlugin"
+            }
+        },
+        "CalibrationShapes": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.4/cache/cura_packages/CalibrationShapes.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "5axes",
+                    "display_name": "5axes",
+                    "email": "cuq@free.fr",
+                    "website": "https://github.com/5axes"
+                },
+                "description": "This plugin adds a menu to create some basic shapes to the scene (cube, cylinder, tube, sphere) and standard test parts. \n\nYou can add standard test / calibration part :\n- Calibration Cube XYZ\n- PLA TempTower 220 - 180\u00b0C\n- PLA TempTower 220 - 190\u00b0C\n- PLA+ TempTower 230 - 200\u00b0C\n- ABS TempTower 250 - 210\u00b0C\n- PETG TempTower 260 - 230\u00b0C\n- PC TempTower 290 - 250\u00b0C\n- Acceleration Tower\n- Retract Tower\n- A XY calibration Test\n- Retract Test part\n- Bridge Spiral Test\n- Thin Wall Test\n- Overhang Test\n- Flow Tower Test\n- Flow Test\n- Max Flow Test\n- Multi Flow Test\n- Tolerance Test\n- Support Test\n- Lithophane Test\n- Dimensional Accuracy Test\n- Linear Pressure Advance Tower\n- Bed Level Calibration Test\n\nAnd Multi-Extruder part :\n- Extruder Offset Calibration\n- Calibration Cube bi-color\n- Cube bi-color\n\n+ 7 postprocessing scripts",
+                "display_name": "Calibration Shapes",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "CalibrationShapes",
+                "package_type": "plugin",
+                "package_version": "2.2.4",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.3.0",
+                "website": "https://github.com/5axes/Calibration-Shapes"
+            }
+        },
+        "ChituCodeWriter": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.11/cache/cura_packages/ChituCodeWriter.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "Daniel26",
+                    "display_name": "Spanni",
+                    "email": "dspannbauer@web.de",
+                    "website": "https://google.com"
+                },
+                "description": "Inserts a preview image and time information for chitu boards (e.g. Tronxy) into the gcode",
+                "display_name": "ChituCodeWriter",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "ChituCodeWriter",
+                "package_type": "plugin",
+                "package_version": "1.0.6",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.0.0",
+                "website": "https://github.com/Spanni26/ChituCodeWriter"
+            }
+        },
+        "CuraBlender": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.0/cache/cura_packages/CuraBlender.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "awiegel",
+                    "display_name": "Alexander Wiegel",
+                    "email": "alexander.wiegel@outlook.com",
+                    "website": "https://github.com/awiegel"
+                },
+                "description": "Provides support for reading/writing BLEND files.\nAdds further functionality, for example live mesh reloading.\n\nTrailer: https://www.youtube.com/watch?v=0cdlJtuJI70",
+                "display_name": "CuraBlender",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "CuraBlender",
+                "package_type": "plugin",
+                "package_version": "2.0.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.0.0",
+                "website": "https://github.com/awiegel/CuraBlender"
+            }
+        },
+        "CustomSupportCylinder": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.4/cache/cura_packages/CustomSupportCylinder.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "5axes",
+                    "display_name": "5axes",
+                    "email": "cuq@free.fr",
+                    "website": "https://github.com/5axes"
+                },
+                "description": "A Cura plugin  to add 6 types of custom supports :\n- Cylindrical\n- Tube\n- Cube\n- Abutment\n- Freeform ( Geometry can be defined by your own STL  file)\n           - Cross\n           - Section\n           - Pillar\n           - Bridge\n           - Arch Buttress  (Arc boutant)\n           - Custom\n- Customized ( Definition with two selected points )",
+                "display_name": "Cylindric Custom Support",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "CustomSupportCylinder",
+                "package_type": "plugin",
+                "package_version": "2.8.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.2.0",
+                "website": "https://github.com/5axes/CustomSupportCylinder"
+            }
+        },
+        "ElegooNeptune3Thumbnails": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.10/cache/cura_packages/ElegooNeptune3Thumbnails.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "molodos",
+                    "display_name": "Molodos",
+                    "email": "realmolodos@gmail.com",
+                    "website": "https://github.com/Molodos"
+                },
+                "description": "Adds Elegoo Neptune printer thumbnail to G-code. Contains options to display parameters like estimated print time or model height on the thumbnail",
+                "display_name": "Elegoo Neptune Thumbnails",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "ElegooNeptune3Thumbnails",
+                "package_type": "plugin",
+                "package_version": "4.5.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.8.0",
+                "website": "https://github.com/Molodos/ElegooNeptuneThumbnails"
+            }
+        },
+        "FilRightEngineeringASA": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.10/cache/cura_packages/FilRightEngineeringASA.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "FilRight",
+                    "display_name": "FilRight",
+                    "email": "info@filright.com",
+                    "website": "https://www.filright.com"
+                },
+                "description": "FilRight Engineering ASA is a very strong, UV- and weather resistant filament. It is a professional industrial grade engineering material that provides mechanical properties seen in ABS but is much easier to print, has perfect layer-adhesion and comes with no-warping technology which ensures a almost warp-free printing experience.\nSince it is UV- and weather resistant it is the perfect choice for outdoor, automotive and marine applications.\n\nUnique features:\n- UV- and weather resistant\n- Easy to print\n- No-warp technology \n- Great layer adhesion\n- Industrial mechanical properties\n",
+                "display_name": "FilRight Engineering ASA",
+                "is_active": false,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "FilRightEngineeringASA",
+                "package_type": "material",
+                "package_version": "1.2.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.9.0",
+                "website": "https://www.filright.com"
+            }
+        },
+        "FilRightMetallicPLA": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.10/cache/cura_packages/FilRightMetallicPLA.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "FilRight",
+                    "display_name": "FilRight",
+                    "email": "info@filright.com",
+                    "website": "https://www.filright.com"
+                },
+                "description": "FilRight Pro PLA+ Metallic is a composition of our easy to print Pro PLA+ range with a high concentration of metallic flakes which give your printed parts a beautiful glittering look and barely noticeable layer-transitions. \n\nUnique features:\n- Glitters make the layer transitions barely noticable.\n- Glistening gives your parts a unique look.\n- Does not damage your nozzle / No hardened nozzle needed\n- Prints just like regular PLA\n\nThis package will provide the optimized settings for FilRight Pro PLA+ Metallic.",
+                "display_name": "FilRight Pro PLA+ Metallic",
+                "is_active": false,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "FilRightMetallicPLA",
+                "package_type": "material",
+                "package_version": "1.2.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.9.0",
+                "website": "https://www.filright.com"
+            }
+        },
+        "FormFutura_ApolloX_2019": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.10/cache/cura_packages/FormFutura_ApolloX_2019.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "Formfutura",
+                    "display_name": "Formfutura",
+                    "email": "info@formfutura.com",
+                    "website": "https://www.formfutura.com"
+                },
+                "description": "ApolloX is a professional high-performance engineering filament, which is based on an uniquely industrial-grade modified ASA (Acrylonitrile Styrene Acrylate) compound. ApolloX has been modified to have great thermal stability, improved filament flowing behavior, zero-warping and flawless first- and interlayer adhesion allowing you to 3D print objects with an almost injection-molded precision. ApolloX is UV and weather resistant and by that ensuring great color stability \u2013 combined with high strength and heat resistant properties \u2013 which makes ApolloX a perfect engineering filament for outdoor and automotive applications.  \n\nUnique features\n\u2022\tUV & weather resistant\n\u2022\tFDM/FFF-optimized\no\tNearly warp-free printing\no\tExcellent first & inter-layer adhesion\n\u2022\tGreatly improved mechanical properties and strength\n\u2022\tExtremely high printing precision with fine detail\n\nAA0.4 + Fast",
+                "display_name": "ApolloX",
+                "is_active": false,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "FormFutura_ApolloX_2019",
+                "package_type": "material",
+                "package_version": "3.3.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.9.0",
+                "website": "https://formfutura.com/shop/category/asa-apolloxtm-155"
+            }
+        },
+        "HTMLCuraSettings": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.4/cache/cura_packages/HTMLCuraSettings.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "5axes",
+                    "display_name": "5axes",
+                    "email": "cuq@free.fr",
+                    "website": "https://github.com/5axes"
+                },
+                "description": "Export settings to an HTML File\nIt creates an extra menu option under File -> \"Save Project...\" that allows you to save all of the settings to an HTML file for review/sharing. ",
+                "display_name": "Export HTML Cura Settings",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "HTMLCuraSettings",
+                "package_type": "plugin",
+                "package_version": "2.1.4",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.4.0",
+                "website": "https://github.com/5axes/CuraSettingsWriter"
+            }
+        },
+        "ImportExportProfiles": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.4/cache/cura_packages/ImportExportProfiles.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "5axes",
+                    "display_name": "5axes",
+                    "email": "cuq@free.fr",
+                    "website": "https://github.com/5axes"
+                },
+                "description": "This plugin adds tools related to import / merge profiles under CSV format. Could be used to copy your settings from a printer to an other one, even if they are not compatible.",
+                "display_name": " Import Export CSV Profiles",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "ImportExportProfiles",
+                "package_type": "plugin",
+                "package_version": "1.3.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.4.0",
+                "website": "https://github.com/5axes/ImportExportProfiles"
+            }
+        },
+        "MaterialCostTools": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.0/cache/cura_packages/MaterialCostTools.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "fieldofview",
+                    "display_name": "fieldOfView",
+                    "email": "aldo@fieldofview.com",
+                    "website": "http://fieldofview.com"
+                },
+                "description": "Adds tools related to weight and cost of materials, such as importing and exporting weights and costs to a file which can be easily distributed",
+                "display_name": "Material Cost Tools",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "MaterialCostTools",
+                "package_type": "plugin",
+                "package_version": "3.6.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.0.0",
+                "website": "https://github.com/fieldOfView/Cura-MaterialCostTools"
+            }
+        },
+        "MaterialSettingsPlugin": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.4/cache/cura_packages/MaterialSettingsPlugin.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "fieldofview",
+                    "display_name": "fieldOfView",
+                    "email": "aldo@fieldofview.com",
+                    "website": "http://fieldofview.com"
+                },
+                "description": "Lets the user select which print settings are available on the Materials pane of the preferences.\n\nThis plugin does not change the fact that a setting value specified in the \"sidebar\" settings, or in a quality profile, always overrides the value set for the material.",
+                "display_name": "Material Settings",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "MaterialSettingsPlugin",
+                "package_type": "plugin",
+                "package_version": "3.6.2",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.0.0",
+                "website": "https://github.com/fieldOfView/Cura-MaterialSettingsPlugin/"
+            }
+        },
+        "MeasureTool": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.4/cache/cura_packages/MeasureTool.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "fieldofview",
+                    "display_name": "fieldOfView",
+                    "email": "aldo@fieldofview.com",
+                    "website": "http://fieldofview.com"
+                },
+                "description": "Adds a tool for measuring parts of models.\n\nThe plugin lets the user select two points, either on models or on the build plate. The distance between these two points is shown in the panel for the tool; the distance is shown both per axis and diagonally. \n\nWhen clicking the tool moves the closest of the two points to the cursor. Hold down the shift key to alternate between the two points instead.\n\nThe development of this plugin can be sponsored via Github Sponsors (https://github.com/sponsors/fieldofview) or Paypal (https://www.paypal.me/fieldofview)",
+                "display_name": "Measure Tool",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "MeasureTool",
+                "package_type": "plugin",
+                "package_version": "1.2.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.0.0",
+                "website": "https://github.com/fieldOfView/Cura-MeasureTool/"
+            }
+        },
+        "MeshTools": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.4/cache/cura_packages/MeshTools.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "fieldofview",
+                    "display_name": "fieldOfView",
+                    "email": "aldo@fieldofview.com",
+                    "website": "http://fieldofview.com"
+                },
+                "description": "Adds several mesh analysis and manipulation tools.\n\nThe development of this plugin can be sponsored via Github Sponsors (https://github.com/sponsors/fieldofview) or Paypal (https://www.paypal.me/fieldofview)",
+                "display_name": "Mesh Tools",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "MeshTools",
+                "package_type": "plugin",
+                "package_version": "3.7.2",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.0.0",
+                "website": "https://github.com/fieldOfView/Cura-MeshTools"
+            }
+        },
+        "OctoPrintPlugin": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.4/cache/cura_packages/OctoPrintPlugin.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "fieldofview",
+                    "display_name": "fieldOfView",
+                    "email": "aldo@fieldofview.com",
+                    "website": "http://fieldofview.com"
+                },
+                "description": "Enables networked printing and monitoring with OctoPrint.\n\nOctoPrint is a registered trademark. For more information about OctoPrint, see octoprint.org\n\nThe development of this plugin can be sponsored via Github Sponsors (https://github.com/sponsors/fieldofview) or Paypal (https://www.paypal.me/fieldofview)",
+                "display_name": "OctoPrint Connection",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "OctoPrintPlugin",
+                "package_type": "plugin",
+                "package_version": "3.7.3",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.0.0",
+                "website": "https://github.com/fieldOfView/Cura-OctoPrintPlugin"
+            }
+        },
+        "OrientationPlugin": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.10/cache/cura_packages/OrientationPlugin.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "nallath",
+                    "display_name": "nallath",
+                    "email": "j.vankessel@ultimaker.com",
+                    "website": "http://www.github.com/nallath"
+                },
+                "description": "Extension that enables the automatic orientation of models to reduce the need for support. This wraps the MeshTweaker by Christoph Schranz, so it can be easily used in Cura. ",
+                "display_name": "Auto-Orientation",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "OrientationPlugin",
+                "package_type": "plugin",
+                "package_version": "3.7.2",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.0.0",
+                "website": "https://github.com/nallath/CuraOrientationPlugin"
+            }
+        },
+        "PauseBackendPlugin": {
+            "filename": "/Users/frederik/Library/Application Support/cura/4.13/cache/cura_packages/PauseBackendPlugin.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "fieldofview",
+                    "display_name": "fieldOfView",
+                    "email": "aldo@fieldofview.com",
+                    "website": "http://fieldofview.com"
+                },
+                "description": "Adds a button to the sidebar to toggle automatic slicing.\n\nThe development of this plugin can be sponsored via Github Sponsors (https://github.com/sponsors/fieldofview) or Paypal (https://www.paypal.me/fieldofview)",
+                "display_name": "Automatic Slicing Toggle",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "PauseBackendPlugin",
+                "package_type": "plugin",
+                "package_version": "3.6.0",
+                "sdk_version": 7,
+                "sdk_version_semver": "7.0.0",
+                "website": "https://github.com/fieldOfView/Cura-PauseBackendPlugin"
+            }
+        },
+        "PrinterSettingsPlugin": {
+            "filename": "/Users/frederik/Library/Application Support/cura/4.13/cache/cura_packages/PrinterSettingsPlugin.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "fieldofview",
+                    "display_name": "fieldOfView",
+                    "email": "aldo@fieldofview.com",
+                    "website": "http://fieldofview.com"
+                },
+                "description": "Adds printer settings to the sidebar \n\nNB: Changes made in the sidebar override values set in the machine definition and end up in quality profiles. It is not recommended to use this plugin unless you understand the implications: USE AT YOUR OWN RISK.\n\nThe development of this plugin can be sponsored via Github Sponsors (https://github.com/sponsors/fieldofview) or Paypal (https://www.paypal.me/fieldofview)",
+                "display_name": "Printer Settings",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "PrinterSettingsPlugin",
+                "package_type": "plugin",
+                "package_version": "3.6.0",
+                "sdk_version": 7,
+                "sdk_version_semver": "7.0.0",
+                "website": "https://github.com/fieldOfView/Cura-PrinterSettingsPlugin"
+            }
+        },
+        "ProfilAnalyser": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.4/cache/cura_packages/ProfilAnalyser.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "5axes",
+                    "display_name": "5axes",
+                    "email": "cuq@free.fr",
+                    "website": "https://github.com/5axes"
+                },
+                "description": "Plugin to analyse Cura profils configuration much easier. Export the different profils in HTML page",
+                "display_name": "Profil Analyser",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "ProfilAnalyser",
+                "package_type": "plugin",
+                "package_version": "1.3.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.2.0",
+                "website": "https://github.com/5axes/ProfilAnalyser"
+            }
+        },
+        "SettingsGuide2": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.4/cache/cura_packages/SettingsGuide2.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "Ghostkeeper",
+                    "display_name": "Ghostkeeper",
+                    "email": "rubend@tutanota.com",
+                    "website": "https://github.com/Ghostkeeper"
+                },
+                "description": "A guide on what settings do and how to use them.\nRight-click on a setting to access the guide.",
+                "display_name": "Settings Guide",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "SettingsGuide2",
+                "package_type": "plugin",
+                "package_version": "2.9.2",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.0.0",
+                "website": "https://github.com/Ghostkeeper/SettingsGuide"
+            }
+        },
+        "Slicedog_1": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.11/cache/cura_packages/Slicedog_1.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "dolphinprinter",
+                    "display_name": "Dolphin Printer",
+                    "email": "daniel.puchta@dolphinsimulation.com",
+                    "website": "https://www.dolphinsimulation.com"
+                },
+                "description": "Slicedog is a plugin that brings intelligent material optimization directly into Ultimaker Cura. It helps users reduce filament usage \u2014 often by 30\u201360% \u2014 without compromising strength. After defining where the forces act on the part and which areas are fixed in place, Slicedog analyzes the model and automatically creates a new internal structure using topology optimization. The result is a strong, lightweight print optimized for real-world performance. It also helps users understand whether their part is strong enough or if it could break under load \u2014 before printing even starts. Ideal for jigs, fixtures, and technical prints where saving material and maintaining strength matters.",
+                "display_name": "Slicedog",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "Slicedog_1",
+                "package_type": "plugin",
+                "package_version": "1.1.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.7.0",
+                "website": "https://slicedog.com"
+            }
+        },
+        "ThingiBrowser": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.4/cache/cura_packages/ThingiBrowser.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "ChrisTerBekeAuthor",
+                    "display_name": "Chris ter Beke",
+                    "email": "info@christerbeke.com",
+                    "website": "https://christerbeke.com"
+                },
+                "description": "Search and import 3D files from popular online repositories directly in Cura.\n\nThis plugin is not affiliated with Thingiverse or MyMiniFactory.",
+                "display_name": "ThingiBrowser",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "ThingiBrowser",
+                "package_type": "plugin",
+                "package_version": "3.1.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.4.0",
+                "website": "https://github.com/ChrisTerBeke/ThingiBrowser"
+            }
+        },
+        "ZOffsetPlugin": {
+            "filename": "/Users/frederik/Library/Application Support/cura/4.13/cache/cura_packages/ZOffsetPlugin.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "fieldofview",
+                    "display_name": "fieldOfView",
+                    "email": "aldo@fieldofview.com",
+                    "website": "http://fieldofview.com"
+                },
+                "description": "Adds a Z Offset setting to change the distance between the nozzle and the buildplate.\n\nThe development of this plugin can be sponsored via Github Sponsors (https://github.com/sponsors/fieldofview) or Paypal (https://www.paypal.me/fieldofview)",
+                "display_name": "Z Offset Setting",
+                "is_active": true,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "ZOffsetPlugin",
+                "package_type": "plugin",
+                "package_version": "3.6.0",
+                "sdk_version": 7,
+                "sdk_version_semver": "7.0.0",
+                "website": "https://github.com/fieldOfView/Cura-ZOffsetPlugin"
+            }
+        },
+        "colorfabb_colorondemand": {
+            "filename": "/Users/frederik/Library/Application Support/cura/5.10/cache/cura_packages/colorfabb_colorondemand.curapackage",
+            "package_info": {
+                "author": {
+                    "author_id": "colorFabb_team",
+                    "display_name": "colorFabb",
+                    "email": "support@colorfabb.com",
+                    "website": "https://colorfabb.com/"
+                },
+                "description": "Easy to print premium PLA, available in 100+ RAL colors and custom colors starting at 2kg MOQ.",
+                "display_name": "Color On Demand",
+                "is_active": false,
+                "is_bundled": false,
+                "is_installed": true,
+                "package_id": "colorfabb_colorondemand",
+                "package_type": "material",
+                "package_version": "1.3.0",
+                "sdk_version": 8,
+                "sdk_version_semver": "8.9.0",
+                "website": "https://colorfabb.com/color-on-demand"
+            }
+        }
+    },
+    "to_install": {},
+    "to_remove": [],
+    "version": 1
+}

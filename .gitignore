@@ -162,6 +162,11 @@ __pycache__
 # IOLogger logs
 *_log.csv
 
+#slicer configs
+.sentry-native
+*.old
+*.log
+
 # Misc.
 *~
 *.orig

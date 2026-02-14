@@ -1,0 +1,25 @@
+{
+  "name": "Elegoo Neptune Thumbnails",
+  "id": "neptune_thumbnails",
+  "author": {
+    "author_id": "molodos",
+    "display_name": "Molodos",
+    "email": "realmolodos@gmail.com",
+    "website": "https://github.com/Molodos"
+  },
+  "version": "4.5.0",
+  "description": "Adds Elegoo Neptune printer thumbnail to G-code. Contains options to display parameters like estimated print time or model height on the thumbnail",
+  "supported_sdk_versions": [
+    "8.0.0",
+    "8.1.0",
+    "8.2.0",
+    "8.3.0",
+    "8.4.0",
+    "8.5.0",
+    "8.6.0",
+    "8.7.0",
+    "8.8.0",
+    "8.9.0"
+  ],
+  "api": 8
+}
