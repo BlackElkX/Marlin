@@ -1,0 +1,29 @@
+# Build artifacts
+buildroot/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# PlatformIO files/dirs
+.pio*
+.pioenvs
+.piolibdeps
+.clang_complete
+.gcc-flags.json
+/lib/
+
+# Web assets
+*.min.js
+*.min.css
+
+# Generated files
+__pycache__/
+*.pyc
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
