@@ -7,6 +7,14 @@ buildroot/
 *.dll
 *.exe
 
+# PlatformIO files/dirs
+.pio*
+.pioenvs
+.piolibdeps
+.clang_complete
+.gcc-flags.json
+/lib/
+
 # Web assets
 *.min.js
 *.min.css

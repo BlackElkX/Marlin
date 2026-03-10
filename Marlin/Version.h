@@ -28,20 +28,20 @@
 /**
  * Marlin release version identifier
  */
-//#define SHORT_BUILD_VERSION "bugfix-2.1.x"
+#define SHORT_BUILD_VERSION "ghoti-4.1.6"
 
 /**
  * Verbose version identifier which should contain a reference to the location
  * from where the binary was downloaded or the source code was compiled.
  */
-//#define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION
+#define DETAILED_BUILD_VERSION "Marlin 2.1.3 bugfix" 
 
 /**
  * The STRING_DISTRIBUTION_DATE represents when the binary file was built,
  * here we define this default string as the date where the latest release
  * version was tagged.
  */
-//#define STRING_DISTRIBUTION_DATE "2025-09-29"
+#define STRING_DISTRIBUTION_DATE "2026-03-10"
 
 /**
  * The protocol for communication to the host. Protocol indicates communication
@@ -53,7 +53,10 @@
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
  */
-//#define MACHINE_NAME "3D Printer"
+#define MACHINE_NAME "Ghoti 4.1.6"
+// Name displayed in the LCD "Ready" message and Info menu
+#define CUSTOM_MACHINE_NAME "Ghoti 4.1.6   "
+//#define CONFIGURABLE_MACHINE_NAME // Add G-code M550 to set/report the machine name
 
 /**
  * The SOURCE_CODE_URL is the location where users will find the Marlin Source
@@ -61,18 +64,20 @@
  * has a distinct Github fork— the Source Code URL should just be the main
  * Marlin repository.
  */
-//#define SOURCE_CODE_URL "github.com/MarlinFirmware/Marlin"
+#define SOURCE_CODE_URL "github.com/BlackElkX/Marlin"
 
 /**
  * Default generic printer UUID.
  */
-//#define DEFAULT_MACHINE_UUID "cede2a2f-41a2-4748-9b12-c55c62f367ff"
+// Printer's unique ID, used by some programs to differentiate between machines.
+// Choose your own or use a service like https://www.uuidgenerator.net/version4
+#define MACHINE_UUID "44b52da7-fc54-4a64-a49a-d960feae2af5"
 
 /**
  * The WEBSITE_URL is the location where users can get more information such as
  * documentation about a specific Marlin release.
  */
-//#define WEBSITE_URL "marlinfw.org"
+#define WEBSITE_URL "ghoti.be"
 
 /**
  * Set the vendor info the serial USB interface, if changeable.

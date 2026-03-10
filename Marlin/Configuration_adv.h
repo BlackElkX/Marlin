@@ -1292,10 +1292,10 @@
  * Enable DISABLE_IDLE_* to shut down axis steppers after an idle period.
  * The default timeout duration can be overridden with M18 and M84. Set to 0 for No Timeout.
  */
-#define DEFAULT_STEPPER_TIMEOUT_SEC 120
+#define DEFAULT_STEPPER_TIMEOUT_SEC 600
 #define DISABLE_IDLE_X
 #define DISABLE_IDLE_Y
-#define DISABLE_IDLE_Z    // Disable if the nozzle could fall onto your printed part!
+//#define DISABLE_IDLE_Z    // Disable if the nozzle could fall onto your printed part!
 //#define DISABLE_IDLE_I
 //#define DISABLE_IDLE_J
 //#define DISABLE_IDLE_K
@@ -3095,14 +3095,19 @@
     #define TMC2240_SLOPE_CONTROL   0   // :{ 0:'100V/µs', 1:'200V/µs', 2:'400V/µs', 3:'800V/µs' }
   #endif
   //FDK motor stuff (microsteps)
+  #define XYAXISCURRENT   500
+  #define ZAXISCURRENT    800
+  #define EXTRUDERCURRENT1 200
+  #define EXTRUDERCURRENT2 300
+
   #if AXIS_IS_TMC_CONFIG(X)
-    #define X_CURRENT       800        // (mA) RMS current. Multiply by 1.414 for peak current.
-    #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for homing. (Typically lower than *_CURRENT.)
-    #define X_MICROSTEPS     256        // 0..256
+    #define X_CURRENT       XYAXISCURRENT  // (mA) RMS current. Multiply by 1.414 for peak current.
+    #define X_CURRENT_HOME  X_CURRENT      // (mA) RMS current for homing. (Typically lower than *_CURRENT.)
+    #define X_MICROSTEPS     256           // 0..256
     #define X_RSENSE          0.11
-    #define X_CHAIN_POS      -1        // -1..0: Not chained. 1: MCU MOSI connected. 2: Next in chain, ...
-    //#define X_INTERPOLATE  true      // Enable to override 'INTERPOLATE' for the X axis
-    //#define X_HOLD_MULTIPLIER 0.5    // Enable to override 'HOLD_MULTIPLIER' for the X axis
+    #define X_CHAIN_POS      -1            // -1..0: Not chained. 1: MCU MOSI connected. 2: Next in chain, ...
+    //#define X_INTERPOLATE  true            // Enable to override 'INTERPOLATE' for the X axis
+    //#define X_HOLD_MULTIPLIER 0.5          // Enable to override 'HOLD_MULTIPLIER' for the X axis
   #endif
 
   #if AXIS_IS_TMC_CONFIG(X2)
@@ -3116,7 +3121,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Y)
-    #define Y_CURRENT       800
+    #define Y_CURRENT       XYAXISCURRENT
     #define Y_CURRENT_HOME  Y_CURRENT
     #define Y_MICROSTEPS     256
     #define Y_RSENSE          0.11
@@ -3136,7 +3141,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Z)
-    #define Z_CURRENT       800
+    #define Z_CURRENT       ZAXISCURRENT
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     256
     #define Z_RSENSE          0.11
@@ -3236,16 +3241,16 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(E0)
-    #define E0_CURRENT      400
+    #define E0_CURRENT       EXTRUDERCURRENT1
     #define E0_MICROSTEPS    256
-    #define E0_RSENSE         0.11
-    #define E0_CHAIN_POS     -1
-    //#define E0_INTERPOLATE true
+    #define E0_RSENSE          0.11
+    #define E0_CHAIN_POS      -1
+    //#define E0_INTERPOLATE   true
     //#define E0_HOLD_MULTIPLIER 0.5
   #endif
 
   #if AXIS_IS_TMC_CONFIG(E1)
-    #define E1_CURRENT      E0_CURRENT
+    #define E1_CURRENT      EXTRUDERCURRENT2
     #define E1_MICROSTEPS   E0_MICROSTEPS
     #define E1_RSENSE       E0_RSENSE
     #define E1_CHAIN_POS     -1
@@ -3254,7 +3259,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(E2)
-    #define E2_CURRENT      E0_CURRENT
+    #define E2_CURRENT      EXTRUDERCURRENT2
     #define E2_MICROSTEPS   E0_MICROSTEPS
     #define E2_RSENSE       E0_RSENSE
     #define E2_CHAIN_POS     -1
@@ -3263,7 +3268,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(E3)
-    #define E3_CURRENT      E0_CURRENT
+    #define E3_CURRENT      EXTRUDERCURRENT2
     #define E3_MICROSTEPS   E0_MICROSTEPS
     #define E3_RSENSE       E0_RSENSE
     #define E3_CHAIN_POS     -1

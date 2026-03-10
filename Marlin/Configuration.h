@@ -130,18 +130,6 @@
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
 
-//FDK version numbers of marlin
-#define SHORT_BUILD_VERSION "ghoti-4.1.1"
-#define DETAILED_BUILD_VERSION "Marlin 2.1.3 bugfix" 
-
-// Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ghoti 4.1.1   "
-//#define CONFIGURABLE_MACHINE_NAME // Add G-code M550 to set/report the machine name
-
-// Printer's unique ID, used by some programs to differentiate between machines.
-// Choose your own or use a service like https://www.uuidgenerator.net/version4
-#define MACHINE_UUID "44b52da7-fc54-4a64-a49a-d960feae2af5"
-
 // @section stepper drivers
 
 /**
@@ -1334,8 +1322,8 @@
  * 1/256 => 1280.00  4560.00                  6240.00     6400.00
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */ //fdk: todo: verhoog resolutie Z en E
-#define TronxyTitanExtruderSPU 6400 //9142.857142857142857
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, 9142.8571, TronxyTitanExtruderSPU }
+#define TronxyTitanExtruderSPU 9142.857142857142857
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, TronxyTitanExtruderSPU }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
