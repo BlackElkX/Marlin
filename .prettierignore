@@ -1,0 +1,18 @@
+# Prettier Ignore file
+*.min.js
+web-ui/
+buildroot/share/PlatformIO/boards
+buildroot/share/PlatformIO/variants
+*.sublime-project
+*.sublime-syntax
+.github
+.vscode
+launch.json
+
+# PlatformIO files/dirs
+.pio*
+.pioenvs
+.piolibdeps
+.clang_complete
+.gcc-flags.json
+/lib/
