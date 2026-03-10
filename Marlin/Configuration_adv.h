@@ -1558,7 +1558,7 @@
     /**
      * Enable to init the Probe Z-Offset when starting the Wizard.
      * Use a height slightly above the estimated nozzle-to-probe Z offset.
-     * For example, with an offset of -5, consider a starting height of -4.
+     * For example, with an offset of -5, consider a starting height of -C
      */
     //FDK probe offset
     //#define PROBE_OFFSET_WIZARD_START_Z -4.000
@@ -3095,10 +3095,10 @@
     #define TMC2240_SLOPE_CONTROL   0   // :{ 0:'100V/µs', 1:'200V/µs', 2:'400V/µs', 3:'800V/µs' }
   #endif
   //FDK motor stuff (microsteps)
-  #define XYAXISCURRENT   500
-  #define ZAXISCURRENT    800
-  #define EXTRUDERCURRENT1 200
-  #define EXTRUDERCURRENT2 300
+  #define XYAXISCURRENT    500
+  #define ZAXISCURRENT    1000
+  #define EXTRUDERCURRENT1 400
+  #define EXTRUDERCURRENT2 400
 
   #if AXIS_IS_TMC_CONFIG(X)
     #define X_CURRENT       XYAXISCURRENT  // (mA) RMS current. Multiply by 1.414 for peak current.
