@@ -28,13 +28,13 @@
 /**
  * Marlin release version identifier
  */
-#define SHORT_BUILD_VERSION "ghoti-4.1.7"
+#define SHORT_BUILD_VERSION "ghoti-4.1.8"
 
 /**
  * Verbose version identifier which should contain a reference to the location
  * from where the binary was downloaded or the source code was compiled.
  */
-#define DETAILED_BUILD_VERSION "Marlin 2.1.3 bugfix" 
+#define DETAILED_BUILD_VERSION "Marlin 2.1.3 bugfix"
 
 /**
  * The STRING_DISTRIBUTION_DATE represents when the binary file was built,
@@ -53,9 +53,9 @@
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
  */
-#define MACHINE_NAME "Ghoti 4.1.7   "
+#define MACHINE_NAME "Ghoti 4.1.8   "
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ghoti 4.1.7   "
+#define CUSTOM_MACHINE_NAME "Ghoti 4.1.8   "
 //#define CONFIGURABLE_MACHINE_NAME // Add G-code M550 to set/report the machine name
 
 /**

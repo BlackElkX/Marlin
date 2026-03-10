@@ -1740,7 +1740,7 @@
 //#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 } // (mm) X, Y, Z distance from Nozzle tip to Probe trigger-point
 
 //FDK bl-touch offset
-#define NOZZLE_TO_PROBE_OFFSET { -33.69, 5, -4.23 } //FDK Z offset was -1.20
+#define NOZZLE_TO_PROBE_OFFSET { -33.69, 5, -3.76 } //FDK Z offset was -1.20 -4.23
 //FDK Tronxy has this: -40, 0, 0
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.

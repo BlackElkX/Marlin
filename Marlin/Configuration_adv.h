@@ -3171,10 +3171,10 @@
     #define TMC2240_SLOPE_CONTROL   0   // :{ 0:'100V/µs', 1:'200V/µs', 2:'400V/µs', 3:'800V/µs' }
   #endif
   //FDK motor stuff (microsteps)
-  #define XYAXISCURRENT    500
-  #define ZAXISCURRENT    1000
-  #define EXTRUDERCURRENT1 400
-  #define EXTRUDERCURRENT2 400
+  #define XYAXISCURRENT     500
+  #define ZAXISCURRENT     1000
+  #define EXTRUDERCURRENT1  800
+  #define EXTRUDERCURRENT2  800
 
   #if AXIS_IS_TMC_CONFIG(X)
     #define X_CURRENT       XYAXISCURRENT  // (mA) RMS current. Multiply by 1.414 for peak current.
