@@ -51,6 +51,12 @@
  */
 #define THERMOCOUPLE_MAX_ERRORS 15
 
+//FDK Temperature sensors:
+#define TEMP_1_PIN = TEMP_0_PIN
+#define TEMP_2_PIN = TEMP_0_PIN
+
+#define HEATER_1_PIN = HEATER_0_PIN
+#define HEATER_2_PIN = HEATER_0_PIN
 //
 // Custom Thermistor 1000 parameters
 //
@@ -129,11 +135,13 @@
  * Heated Chamber settings
  */
 #if TEMP_SENSOR_CHAMBER
+  //FDK chamber heater pin on PB11 = 4th heater
+  //FDK chamber temp sensor on PF4 = 4th temp
   #define CHAMBER_MINTEMP             5
   #define CHAMBER_MAXTEMP            60
   #define TEMP_CHAMBER_HYSTERESIS     1   // (°C) Temperature proximity considered "close enough" to the target
   //#define CHAMBER_LIMIT_SWITCHING
-  //#define HEATER_CHAMBER_PIN       44   // Chamber heater on/off pin
+  #define HEATER_CHAMBER_PIN       HEATER_2_PIN   // Chamber heater on/off pin
   //#define HEATER_CHAMBER_INVERTING false
 #endif
 
