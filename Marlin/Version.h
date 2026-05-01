@@ -28,7 +28,7 @@
 /**
  * Marlin release version identifier
  */
-#define SHORT_BUILD_VERSION "ghoti-4.1.8"
+#define SHORT_BUILD_VERSION "ghoti-4.1.9"
 
 /**
  * Verbose version identifier which should contain a reference to the location
@@ -53,9 +53,9 @@
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
  */
-#define MACHINE_NAME "Ghoti 4.1.8   "
+#define MACHINE_NAME "Ghoti 4.1.9   "
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ghoti 4.1.8   "
+#define CUSTOM_MACHINE_NAME "Ghoti 4.1.9   "
 //#define CONFIGURABLE_MACHINE_NAME // Add G-code M550 to set/report the machine name
 
 /**

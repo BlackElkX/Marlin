@@ -1335,6 +1335,7 @@
  * following movement settings. If fewer factors are given than the
  * total number of extruders, the last value applies to the rest.
  */
+//FDK Did I done this?
 #define DISTINCT_E_FACTORS
 
 /**
@@ -1346,19 +1347,19 @@
  * Z -> 1.8 degree - T8 screw                    256 steps
  * E -> 1.8 degree - titan extruder              256 steps
  *                A        B                        Z           E
- * 1/1   =>    5.00    10.00                    24.375      25.00
- * 1/2   =>   10.00    20.00                    48.75       50.00
- * 1/4   =>   20.00    40.00                    97.50      100.00
- * 1/8   =>   40.00    80.00                   195.00      200.00
- * 1/16  =>   80.00   160.00  => A = default   390.00      400.00
- * 1/32  =>  160.00   320.00                   780.00      800.00
- * 1/64  =>  320.00   640.00                  1560.00     1600.00
- * 1/128 =>  640.00  1280.00                  3120.00     3200.00
- * 1/256 => 1280.00  4560.00                  6240.00     6400.00
+ * 1/1   =>    5.00    10.00                    24.375      25.00      35.714285714285714
+ * 1/2   =>   10.00    20.00                    48.75       50.00      71.428571428571428
+ * 1/4   =>   20.00    40.00                    97.50      100.00     142.857142857142857
+ * 1/8   =>   40.00    80.00                   195.00      200.00     285.714285714285714
+ * 1/16  =>   80.00   160.00  => A = default   390.00      400.00     571.428571428571428
+ * 1/32  =>  160.00   320.00                   780.00      800.00    1142.857142857142857
+ * 1/64  =>  320.00   640.00                  1560.00     1600.00    2285.714285714285714
+ * 1/128 =>  640.00  1280.00                  3120.00     3200.00    4571.428571428571428
+ * 1/256 => 1280.00  4560.00                  6240.00     6400.00    9142.857142857142857
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */ //fdk: todo: verhoog resolutie Z en E
-#define TronxyTitanExtruderSPU 9142.857142857142857
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 6240, TronxyTitanExtruderSPU }
+#define TronxyTitanExtruderSPU  1142.857142857142857
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 3120, TronxyTitanExtruderSPU }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
@@ -1548,6 +1549,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
+//FDK BLTOUCH
 #define BLTOUCH
 
 /**
@@ -1833,6 +1835,7 @@
 #define Z_CLEARANCE_BETWEEN_PROBES  5 // (mm) Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // (mm) Z Clearance between multiple probes
 #define Z_PROBE_ERROR_TOLERANCE     3 // (mm) Tolerance for early trigger (<= -probe.offset.z + ZPET)
+//FDK Z height after probing
 #define Z_AFTER_PROBING            10 // (mm) Z position after probing is done      //FDK probing
 
 //FDK Z after probing on 10
@@ -1909,7 +1912,6 @@
 //#define DISABLE_W
 
 // @section extruder
-
 //#define DISABLE_E               // Disable the extruder when not stepping
 //#define DISABLE_OTHER_EXTRUDERS   // Keep only the active extruder enabled
 
@@ -2757,6 +2759,7 @@
  *
  * View the current statistics with M78.
  */
+//FDK count prints
 #define PRINTCOUNTER
 #if ENABLED(PRINTCOUNTER)
   #define PRINTCOUNTER_SAVE_INTERVAL 5 // (minutes) EEPROM save interval during print. A value of 0 will save stats at end of print.

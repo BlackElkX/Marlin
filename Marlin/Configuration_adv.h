@@ -710,10 +710,11 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
+//FDK fan pin assignment
 #define E0_AUTO_FAN_PIN FAN1_PIN
 #define E1_AUTO_FAN_PIN FAN1_PIN
 #define E2_AUTO_FAN_PIN FAN1_PIN
-#define E3_AUTO_FAN_PIN -1
+#define E3_AUTO_FAN_PIN FAN1_PIN
 #define E4_AUTO_FAN_PIN -1
 #define E5_AUTO_FAN_PIN -1
 #define E6_AUTO_FAN_PIN -1
@@ -1331,6 +1332,7 @@
  * Enable DISABLE_IDLE_* to shut down axis steppers after an idle period.
  * The default timeout duration can be overridden with M18 and M84. Set to 0 for No Timeout.
  */
+//FDK test about Z steppers not running any more: remove Disable_idle_z
 #define DEFAULT_STEPPER_TIMEOUT_SEC 600
 #define DISABLE_IDLE_X
 #define DISABLE_IDLE_Y
@@ -3170,8 +3172,9 @@
     // Slope Control: Lower is more silent. Higher runs cooler.
     #define TMC2240_SLOPE_CONTROL   0   // :{ 0:'100V/µs', 1:'200V/µs', 2:'400V/µs', 3:'800V/µs' }
   #endif
+
   //FDK motor stuff (microsteps)
-  #define XYAXISCURRENT     500
+  #define XYAXISCURRENT     800
   #define ZAXISCURRENT     1000
   #define EXTRUDERCURRENT1  800
   #define EXTRUDERCURRENT2  800
@@ -3179,7 +3182,7 @@
   #if AXIS_IS_TMC_CONFIG(X)
     #define X_CURRENT       XYAXISCURRENT  // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  X_CURRENT      // (mA) RMS current for homing. (Typically lower than *_CURRENT.)
-    #define X_MICROSTEPS     256           // 0..256
+    #define X_MICROSTEPS    256            // 0..256
     #define X_RSENSE          0.11
     #define X_CHAIN_POS      -1            // -1..0: Not chained. 1: MCU MOSI connected. 2: Next in chain, ...
     //#define X_INTERPOLATE  true            // Enable to override 'INTERPOLATE' for the X axis
@@ -3199,7 +3202,7 @@
   #if AXIS_IS_TMC_CONFIG(Y)
     #define Y_CURRENT       XYAXISCURRENT
     #define Y_CURRENT_HOME  Y_CURRENT
-    #define Y_MICROSTEPS     256
+    #define Y_MICROSTEPS    256
     #define Y_RSENSE          0.11
     #define Y_CHAIN_POS      -1
     //#define Y_INTERPOLATE  true
@@ -3219,7 +3222,7 @@
   #if AXIS_IS_TMC_CONFIG(Z)
     #define Z_CURRENT       ZAXISCURRENT
     #define Z_CURRENT_HOME  Z_CURRENT
-    #define Z_MICROSTEPS     256
+    #define Z_MICROSTEPS    128
     #define Z_RSENSE          0.11
     #define Z_CHAIN_POS      -1
     //#define Z_INTERPOLATE  true
@@ -3318,7 +3321,7 @@
 
   #if AXIS_IS_TMC_CONFIG(E0)
     #define E0_CURRENT       EXTRUDERCURRENT1
-    #define E0_MICROSTEPS    256
+    #define E0_MICROSTEPS     32
     #define E0_RSENSE          0.11
     #define E0_CHAIN_POS      -1
     //#define E0_INTERPOLATE   true
@@ -3431,9 +3434,9 @@
    */
   //FDK use software SPI for steppers
   #define TMC_USE_SW_SPI
+  //#define TMC_SPI_SCK   -1
   //#define TMC_SPI_MOSI  -1
   //#define TMC_SPI_MISO  -1
-  //#define TMC_SPI_SCK   -1
 
   // @section tmc/serial
 
@@ -3630,6 +3633,7 @@
     // TMC2209: 0...255. TMC2130: -64...63
     #define X_STALL_SENSITIVITY  8
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
+    //FDK Y_STALL must be -8 ?
     #define Y_STALL_SENSITIVITY  -8
     #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
     //#define Z_STALL_SENSITIVITY  8
