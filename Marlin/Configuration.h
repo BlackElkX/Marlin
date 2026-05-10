@@ -62,7 +62,7 @@
 
 // Author info of this build printed to the host during boot and M115
 #define STRING_CONFIG_H_AUTHOR "Frederik De Kegel" // Original author or contributor.
-//#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
+#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 // @section machine
 
@@ -1336,17 +1336,17 @@
  * total number of extruders, the last value applies to the rest.
  */
 //FDK Did I done this?
-#define DISTINCT_E_FACTORS
+//#define DISTINCT_E_FACTORS
 
 /**
  * Default Axis Steps Per Unit (linear=steps/mm, rotational=steps/°)
  * Override with M92 (when enabled below)
- Tronxy x5sa with TMC5160
+ * Tronxy x5sa with TMC5160
  * A -> 1.8 degree - 2mm belt - 20 pulley tooths 256 steps
  * B -> 1.8 degree - 2mm belt - 10 pulley tooths 256 steps
  * Z -> 1.8 degree - T8 screw                    256 steps
  * E -> 1.8 degree - titan extruder              256 steps
- *                A        B                        Z           E
+ *                A        B                        Z           E       E version 2
  * 1/1   =>    5.00    10.00                    24.375      25.00      35.714285714285714
  * 1/2   =>   10.00    20.00                    48.75       50.00      71.428571428571428
  * 1/4   =>   20.00    40.00                    97.50      100.00     142.857142857142857
@@ -1358,13 +1358,14 @@
  * 1/256 => 1280.00  4560.00                  6240.00     6400.00    9142.857142857142857
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */ //fdk: todo: verhoog resolutie Z en E
-#define TronxyTitanExtruderSPU  1142.857142857142857
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 3120, TronxyTitanExtruderSPU }
+#define TronxyTitanExtruderSPU  6400
+#define SmallExtruderSteppers   1142.857142857142857
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1280, 3120.00, SmallExtruderSteppers }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
  */
-#define EDITABLE_STEPS_PER_UNIT
+//#define EDITABLE_STEPS_PER_UNIT
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
